@@ -17,6 +17,11 @@ builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
  builder.Services.AddScoped<IDropEventProvider, DropEventProvider>();
  builder.Services.AddScoped<IDropEventRepository, DropEventRepository>();
 
+ builder.Services.AddScoped<IAuthService, AuthService>();
+ builder.Services.AddScoped<IUserProvider, UserProvider>();
+ builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost",

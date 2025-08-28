@@ -11,7 +11,7 @@ namespace sportpick_dal
             {
                 var connectionString = config.GetConnectionString("MongoDb");
                 var client = new MongoClient(connectionString);
-                _database = client.GetDatabase("dropin"); // your DB name
+                _database = client.GetDatabase("dropin");
             }
         public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
