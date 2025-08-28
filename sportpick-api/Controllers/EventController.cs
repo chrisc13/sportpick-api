@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using sportpick_domain;
+using sportpick_bll;
+using System.Text.Json;
 
 namespace sportpick_api.Controllers;
 
@@ -7,15 +9,54 @@ namespace sportpick_api.Controllers;
 [Route("[controller]")]
 public class EventController : ControllerBase{
 
-    [HttpGet(Name = "GetEvents")]
-    public ICollection<Event> Get(){
-        DateTime now = new DateTime();  
-        List<Event> events = new List<Event>();
-        Event myEvent = new Event("id123", "phx", now);
-        events.Add(myEvent);
+    IDropEventService _dropEventService;
 
-        return events;
+    public EventController(IDropEventService dropEventService){
+        _dropEventService = dropEventService;
     }
 
+    [HttpGet(Name = "GetEvents")]
+    public IActionResult Get(){
+        List<DropEvent> events = new List<DropEvent>();
+        
+        events = _dropEventService.GetAllDropEvents();
+        if (events == null || events.Count == 0){
+             return BadRequest();
+        }
+
+        return Ok(events);
+    }
+
+    [HttpGet("GetTopThreePopularEvents")]
+    public IActionResult GetTopThreePopularEvents(){
+        List<DropEvent> events = new List<DropEvent>();
+        
+        events = _dropEventService.GetTopThreePopular();
+        if (events == null || events.Count == 0){
+             return BadRequest();
+        }
+
+        return Ok(events);
+    }
+
+    [HttpPost("CreateEvent")]
+    public IActionResult CreateEvent([FromBody] DropEvent dropEvent)
+    {   
+        Console.WriteLine(JsonSerializer.Serialize(dropEvent, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        }));
+
+        var result = _dropEventService.CreateEvent(dropEvent); // use dropEvent, not 'event'
+        if (!result)
+        {
+            return BadRequest();
+        }
+
+        return Ok(true);
+    }
+
+
+    
 }
 
