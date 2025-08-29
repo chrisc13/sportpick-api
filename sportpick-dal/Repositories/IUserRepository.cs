@@ -6,8 +6,8 @@ using sportpick_domain;
 
 namespace sportpick_dal;
 
-public interface IUserRepository
+public interface IAppUserRepository
 {
-    User? GetByUsername(string username);
-    bool CreateUser(User newUser);
+    AppUser? GetByUsername(string username);
+    bool CreateAppUser(AppUser newAppUser);
 }

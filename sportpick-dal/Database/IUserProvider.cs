@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using sportpick_domain;
 
 namespace sportpick_dal;
-public interface IUserProvider
+public interface IAppUserProvider
 {
-    UserEntity? GetByUsername(string username);
-    bool CreateUser(UserEntity newUser);
+    AppUserEntity? GetByUsername(string username);
+    bool CreateAppUser(AppUserEntity newAppUser);
 }

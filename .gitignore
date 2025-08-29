@@ -8,7 +8,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-# User-specific files
+# AppUser-specific files
 *.suo
 *.user
 *.sln.docstates

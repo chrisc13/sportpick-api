@@ -8,8 +8,8 @@ namespace sportpick_bll
 {
     public interface IAuthService
     {
-        User? Login(User user);
-        bool Register(User request);
+        AppUser? Login(AppUser user);
+        bool Register(AppUser request);
 
     }
 }

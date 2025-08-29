@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-public class UserEntity
+public class AppUserEntity
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]

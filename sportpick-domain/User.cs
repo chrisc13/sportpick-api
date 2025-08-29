@@ -1,6 +1,6 @@
 namespace sportpick_domain
 {
-    public class User
+    public class AppUser
     {
         public string? Id { get; set; } // now your main ID
 

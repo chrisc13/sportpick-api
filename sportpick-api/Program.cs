@@ -1,5 +1,13 @@
 using sportpick_dal;
 using sportpick_bll;
+using sportpick_api.DTO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +26,10 @@ builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
  builder.Services.AddScoped<IDropEventRepository, DropEventRepository>();
 
  builder.Services.AddScoped<IAuthService, AuthService>();
- builder.Services.AddScoped<IUserProvider, UserProvider>();
- builder.Services.AddScoped<IUserRepository, UserRepository>();
+ builder.Services.AddScoped<ITokenService, TokenService>();
+
+ builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
+ builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 
 
 builder.Services.AddCors(options =>
@@ -32,6 +42,24 @@ builder.Services.AddCors(options =>
                   .AllowAnyMethod();
         });
 });
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+ builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }).AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["TokenSecret"]))
+        };
+    });
 
 var app = builder.Build();
 
@@ -46,12 +74,12 @@ if (app.Environment.IsProduction())
 {
     app.UseHttpsRedirection();
 }
+app.UseCors("AllowLocalhost");
 
 //app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseCors("AllowLocalhost");
 
 app.MapControllers();
 

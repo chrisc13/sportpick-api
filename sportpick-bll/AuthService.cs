@@ -10,25 +10,26 @@ namespace sportpick_bll
 {
     public class AuthService : IAuthService
     {
-        private readonly IUserRepository _userRepository;
-        public AuthService(IUserRepository userRepository){
+        private readonly IAppUserRepository _userRepository;
+        public AuthService(IAppUserRepository userRepository){
             _userRepository = userRepository;
         }
 
-        public User? Login(User request){
+        public AppUser? Login(AppUser request){
             var user = _userRepository.GetByUsername(request.Username);
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password)){
                 return null;
             }
             
-             return new User
+             return new AppUser
             {
+                Id = user.Id,
                 Username = user.Username,
                 Password = null
             };
         }
 
-        public bool Register(User request){
+        public bool Register(AppUser request){
             var user = _userRepository.GetByUsername(request.Username);
             if (user != null){
                 return false;
@@ -36,7 +37,7 @@ namespace sportpick_bll
             string hashed = BCrypt.Net.BCrypt.HashPassword(request.Password);
             request.Password = hashed;
 
-            return _userRepository.CreateUser(request);
+            return _userRepository.CreateAppUser(request);
         }
 
 

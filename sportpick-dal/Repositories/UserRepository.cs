@@ -6,27 +6,27 @@ using sportpick_domain;
 
 namespace sportpick_dal
 {
-    public class UserRepository : IUserRepository
+    public class AppUserRepository : IAppUserRepository
     {
-        private readonly IUserProvider _userProvider;
-        public UserRepository(IUserProvider userProvider){
+        private readonly IAppUserProvider _userProvider;
+        public AppUserRepository(IAppUserProvider userProvider){
             _userProvider = userProvider;
         }
 
-        public User? GetByUsername(string username){
+        public AppUser? GetByUsername(string username){
             var userInDb = _userProvider.GetByUsername(username);
             
             if (userInDb != null){
-                return UserMapper.ToDomain(userInDb);
+                return AppUserMapper.ToDomain(userInDb);
             }
 
             return null;
         }
 
-        public bool CreateUser(User newUser){
-            if (newUser != null){
-                var entity = UserMapper.ToEntity(newUser);
-                return _userProvider.CreateUser(entity);
+        public bool CreateAppUser(AppUser newAppUser){
+            if (newAppUser != null){
+                var entity = AppUserMapper.ToEntity(newAppUser);
+                return _userProvider.CreateAppUser(entity);
             }     
             return false;
         }

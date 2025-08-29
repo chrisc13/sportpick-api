@@ -22,6 +22,7 @@ namespace sportpick_dal;
                 EndTime = entity.EndTime,
                 MaxPlayers = entity.MaxPlayers,
                 CurrentPlayers = entity.CurrentPlayers,
+                OrganizerName = entity.OrganizerName,
                 OrganizerId = entity.OrganizerId,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude
@@ -47,6 +48,7 @@ namespace sportpick_dal;
                 EndTime = domain.EndTime,
                 MaxPlayers = domain.MaxPlayers,
                 CurrentPlayers = domain.CurrentPlayers,
+                OrganizerName = domain.OrganizerName,
                 OrganizerId = domain.OrganizerId,
                 Latitude = domain.Latitude,
                 Longitude = domain.Longitude

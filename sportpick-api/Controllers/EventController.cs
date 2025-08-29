@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using sportpick_domain;
 using sportpick_bll;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+
 
 namespace sportpick_api.Controllers;
 
@@ -39,6 +42,7 @@ public class EventController : ControllerBase{
         return Ok(events);
     }
 
+    [Authorize]
     [HttpPost("CreateEvent")]
     public IActionResult CreateEvent([FromBody] DropEvent dropEvent)
     {   
@@ -46,6 +50,11 @@ public class EventController : ControllerBase{
         {
             WriteIndented = true
         }));
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+        dropEvent.OrganizerId = userId;
+
+         var creatorName = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
+        dropEvent.OrganizerName = creatorName;
 
         var result = _dropEventService.CreateEvent(dropEvent); // use dropEvent, not 'event'
         if (!result)
@@ -55,8 +64,6 @@ public class EventController : ControllerBase{
 
         return Ok(true);
     }
-
-
     
 }
 

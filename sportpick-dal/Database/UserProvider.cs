@@ -5,17 +5,18 @@ using System.Collections.Generic;
 
 namespace sportpick_dal
 {
-    public class UserProvider : IUserProvider
+    public class AppUserProvider : IAppUserProvider
     {
-        private readonly IMongoCollection<UserEntity> _users;
-        public UserProvider(IDatabaseProvider databaseProvider){
-            _users = databaseProvider.GetCollection<UserEntity>("users");
+        private readonly IMongoCollection<AppUserEntity> _users;
+        public AppUserProvider(IDatabaseProvider databaseProvider){
+            _users = databaseProvider.GetCollection<AppUserEntity>("users");
         }
 
-        public UserEntity? GetByUsername(string username){
+        public AppUserEntity? GetByUsername(string username){
              var user = _users
                 .Find(u => u.Username == username)
-                .Project(u => new UserEntity { 
+                .Project(u => new AppUserEntity { 
+                    Id = u.Id,
                     Username = u.Username, 
                     Password = u.Password 
                 })
@@ -24,10 +25,10 @@ namespace sportpick_dal
             return user; // returns null if not found
         }
 
-        public bool CreateUser(UserEntity newUser){
+        public bool CreateAppUser(AppUserEntity newAppUser){
             try
             {
-                _users.InsertOne(newUser);
+                _users.InsertOne(newAppUser);
                 return true;
             }
             catch (Exception ex)

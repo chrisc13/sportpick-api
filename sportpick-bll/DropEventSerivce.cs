@@ -25,7 +25,7 @@ public class DropEventService : IDropEventService{
             return new List<DropEvent>();
 
         // Order descending by CurrentPlayers
-        dropEvents = dropEvents.OrderByDescending(de => de.CurrentPlayers).ToList();
+        dropEvents = dropEvents.OrderByDescending(de => de.Date).ToList();
 
         // Take up to 3 items
         return dropEvents.Take(3).ToList();

@@ -3,13 +3,13 @@ using sportpick_domain;
 
 namespace sportpick_dal
 {
-    public static class UserMapper
+    public static class AppUserMapper
     {
-        public static User ToDomain(UserEntity entity)
+        public static AppUser ToDomain(AppUserEntity entity)
         {
             if (entity == null) return null;
 
-            return new User
+            return new AppUser
             {
                 Id = entity.Id,
                 Username = entity.Username,
@@ -17,11 +17,11 @@ namespace sportpick_dal
             };
         }
 
-        public static UserEntity ToEntity(User user)
+        public static AppUserEntity ToEntity(AppUser user)
         {
             if (user == null) return null;
 
-            return new UserEntity
+            return new AppUserEntity
             {
                 Id = user.Id,
                 Username = user.Username,

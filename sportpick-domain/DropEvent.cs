@@ -12,6 +12,7 @@
         public string EndTime { get; set; }
         public int MaxPlayers { get; set; }
         public int CurrentPlayers { get; set; }
+        public string OrganizerName { get; set; }
         public string OrganizerId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
