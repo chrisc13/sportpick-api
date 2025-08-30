@@ -40,6 +40,14 @@ public class DropEventService : IDropEventService{
         return true;
     }
 
+    public bool AttendEvent(string eventId, string username){
+        var result = _dropEventRepository.AttendEvent(eventId, username);
+        if (!result){
+            return false;
+        }
+        return true;
+    }
+
 
 
 }

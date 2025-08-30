@@ -5,4 +5,5 @@ namespace sportpick_dal;
 public interface IDropEventRepository{
     List<DropEvent> GetAllDropEventInfo();
     bool CreateEvent(DropEvent newEvent);
+    bool AttendEvent(string eventId, string username);
 }
