@@ -2,6 +2,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
+using sportpick_domain;
 
 
 namespace sportpick_dal
@@ -17,8 +18,16 @@ namespace sportpick_dal
 
         public List<DropEventEntity> GetAllDropEventInfo()
         {
-            // fetch all documents from the collectionk
-            return _dropEvents.Find(_ => true).ToList();
+            try
+                {
+                    return _dropEvents.Find(_ => true).ToList() ?? new List<DropEventEntity>();
+                }
+            catch (Exception ex)
+            {
+                // log it if needed
+                Console.WriteLine($"Error fetching drop events: {ex.Message}");
+                return new List<DropEventEntity>();
+            }
         }
 
         public bool CreateEvent(DropEventEntity newEvent)
@@ -35,15 +44,14 @@ namespace sportpick_dal
             }
         }
 
-        public bool AttendEvent(string eventId, string username)
+        public bool AttendEvent(Attendee attendee, string eventId)
         {
             var filter = Builders<DropEventEntity>.Filter.Eq("_id", new ObjectId(eventId));
 
             var update = Builders<DropEventEntity>.Update.Combine(
-                Builders<DropEventEntity>.Update.Inc("CurrentPlayers", 1)
-                //Builders<DropEventEntity>.Update.Push("Attendees", userId) // add attendee to array
+                Builders<DropEventEntity>.Update.Inc("CurrentPlayers", 1),
+                Builders<DropEventEntity>.Update.Push("Attendees", attendee) // add attendee to array
             );
-
 
             try
             {

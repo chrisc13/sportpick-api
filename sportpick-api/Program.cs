@@ -30,6 +30,7 @@ builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
 
  builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
  builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
+ builder.Services.AddHttpClient();
 
 
 builder.Services.AddCors(options =>

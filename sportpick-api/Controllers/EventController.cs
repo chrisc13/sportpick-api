@@ -69,13 +69,11 @@ public class EventController : ControllerBase{
     [HttpPost("{eventid}/Attendees")]
     public IActionResult AttendEvent(string eventid)
     {   
+        var userName = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+        var attendee = new Attendee(){Username = userName, Id = userId};
 
-        //to append name to attendees list later!
-       // var creatorName = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
-       // dropEvent.OrganizerName = creatorName;
-
-        var result = _dropEventService.AttendEvent(eventid, userId); // use dropEvent, not 'event'
+        var result = _dropEventService.AttendEvent(attendee, eventid);
         if (!result)
         {
             return BadRequest();

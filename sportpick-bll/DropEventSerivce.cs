@@ -1,5 +1,6 @@
 using sportpick_dal;
 using sportpick_domain;
+using System;
 
 namespace sportpick_bll;
 public class DropEventService : IDropEventService{
@@ -25,7 +26,7 @@ public class DropEventService : IDropEventService{
             return new List<DropEvent>();
 
         // Order descending by CurrentPlayers
-        dropEvents = dropEvents.OrderByDescending(de => de.Date).ToList();
+        dropEvents = dropEvents.OrderByDescending(de => de.Start).ToList();
 
         // Take up to 3 items
         return dropEvents.Take(3).ToList();
@@ -40,8 +41,12 @@ public class DropEventService : IDropEventService{
         return true;
     }
 
-    public bool AttendEvent(string eventId, string username){
-        var result = _dropEventRepository.AttendEvent(eventId, username);
+    public bool AttendEvent(Attendee attendee, string eventId){
+        if (String.IsNullOrEmpty(attendee.Username) || String.IsNullOrEmpty(attendee.Id) || String.IsNullOrEmpty(eventId)){
+            return false;
+        }
+
+        var result = _dropEventRepository.AttendEvent(attendee, eventId);
         if (!result){
             return false;
         }

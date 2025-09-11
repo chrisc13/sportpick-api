@@ -14,18 +14,19 @@ namespace sportpick_dal;
             {
                 Id = entity.Id,
                 EventName = entity.EventName,
-                SportType = entity.SportType,
-                LocationName = entity.LocationName,
-                City = entity.City,
-                Date = entity.Date,
-                StartTime = entity.StartTime,
-                EndTime = entity.EndTime,
+                EventDetails = entity.EventDetails,
+                Sport = entity.Sport,
+                Location = entity.Location,
+                Start = entity.Start,
+                End = entity.End,
                 MaxPlayers = entity.MaxPlayers,
                 CurrentPlayers = entity.CurrentPlayers,
+                Attendees = entity.Attendees,
                 OrganizerName = entity.OrganizerName,
                 OrganizerId = entity.OrganizerId,
                 Latitude = entity.Latitude,
-                Longitude = entity.Longitude
+                Longitude = entity.Longitude,
+                ExtraFields = entity.ExtraFields
             };
         }
 
@@ -40,18 +41,19 @@ namespace sportpick_dal;
             {
                 Id = domain.Id,  // Mongo _id
                 EventName = domain.EventName,
-                SportType = domain.SportType,
-                LocationName = domain.LocationName,
-                City = domain.City,
-                Date = domain.Date,
-                StartTime = domain.StartTime,
-                EndTime = domain.EndTime,
+                EventDetails = domain.EventDetails,
+                Sport = domain.Sport,
+                Location= domain.Location,
+                Start = domain.Start,
+                End = domain.End,
                 MaxPlayers = domain.MaxPlayers,
                 CurrentPlayers = domain.CurrentPlayers,
+                Attendees = domain.Attendees,
                 OrganizerName = domain.OrganizerName,
                 OrganizerId = domain.OrganizerId,
                 Latitude = domain.Latitude,
-                Longitude = domain.Longitude
+                Longitude = domain.Longitude,
+                ExtraFields = domain.ExtraFields
             };
         }
 
@@ -73,3 +75,4 @@ namespace sportpick_dal;
             return domains.Select(ToEntity).ToList();
         }
     }
+

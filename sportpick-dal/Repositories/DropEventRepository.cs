@@ -29,8 +29,8 @@ public class DropEventRepository : IDropEventRepository{
         return _dropEventProvider.CreateEvent(newEntity);
     }
     
-    public bool AttendEvent(string eventId, string username){
-        return _dropEventProvider.AttendEvent(eventId, username);
+    public bool AttendEvent(Attendee attendee, string eventId){
+        return _dropEventProvider.AttendEvent(attendee, eventId);
     }
     
 }

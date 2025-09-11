@@ -6,5 +6,5 @@ public interface IDropEventService
     List<DropEvent> GetAllDropEvents();  
     List<DropEvent> GetTopThreePopular();
     bool CreateEvent(DropEvent newEvent);
-    bool AttendEvent(string eventId, string username);
+    bool AttendEvent(Attendee attendee, string eventId);
 }
