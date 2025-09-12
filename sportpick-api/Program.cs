@@ -81,7 +81,6 @@ if (app.Environment.IsProduction())
 }
 app.UseCors("AllowLocalhost");
 
-//app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 

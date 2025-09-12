@@ -41,6 +41,7 @@ namespace sportpick_api.Controllers
 
             return Ok(profile);
         }
+        [Authorize]
         [HttpPost("upsert")]
         public async Task<IActionResult> UpsertProfile([FromBody] Profile profile)
         {
@@ -49,7 +50,14 @@ namespace sportpick_api.Controllers
 
             try
             {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+                var username = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
+
+                profile.Id = userId;
+                profile.Username = username;
+
                 var success = await _profileService.UpsertProfileAsync(profile);
+
                 if (success)
                     return Ok(true);
                 else
