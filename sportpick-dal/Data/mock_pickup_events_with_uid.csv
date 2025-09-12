@@ -1,0 +1,222 @@
+event_id,event_name,sport_type,location_name,city,date,start_time,end_time,max_players,current_players,organizer_name,organizer_ui,latitude,longitude
+9f234dec-05cc-455d-ae17-5a4274cb5c25,Cricket at Centennial Park,Cricket,Centennial Park,Sydney,2025-05-27,18:00,19:00,19,14,Taylor,,-33.896,151.241
+3b24a685-48f6-4443-8f52-03691af52868,Soccer at Central Park,Soccer,Central Park,New York,2025-05-11,07:00,08:00,15,8,Jordan,,40.785091,-73.968285
+921c0df1-2a51-4b4b-a13f-ad9b5b0185c0,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-05-17,13:00,14:30,17,15,Drew,,13.73,100.541
+6e16de64-f6d8-4402-8bc3-9c1d5c8728f5,Ultimate Frisbee at Green Point Urban Park,Ultimate Frisbee,Green Point Urban Park,Cape Town,2025-05-31,13:00,14:00,9,7,Sam,,-33.9036,18.4098
+aafe60e6-03e1-4994-9819-5f85525c2ad3,Tennis at Yoyogi Park,Tennis,Yoyogi Park,Tokyo,2025-05-24,07:00,08:00,18,16,Alex,,35.672855,139.694944
+32921876-1309-4d05-9127-6246dd8dcfa9,Volleyball at Yoyogi Park,Volleyball,Yoyogi Park,Tokyo,2025-05-30,12:00,13:30,21,10,Jordan,,35.672855,139.694944
+16a1f61f-f545-4904-96fa-71955dda7484,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-06-05,09:00,11:00,22,11,Riley,,13.73,100.541
+50e8bedd-b4ee-44f7-96e2-d943f05f69cc,Rugby at High Park,Rugby,High Park,Toronto,2025-05-12,06:00,07:30,20,13,Casey,,43.6465,-79.4637
+be219283-26f1-4f8a-970e-659da51ba050,Cricket at Green Point Urban Park,Cricket,Green Point Urban Park,Cape Town,2025-05-15,07:00,08:00,6,3,Taylor,,-33.9036,18.4098
+4c850b82-16b0-4065-b8e0-43957e1c4e2a,Soccer at Hyde Park,Soccer,Hyde Park,London,2025-05-19,11:00,13:00,15,14,Drew,,51.507268,-0.16573
+35a5b33a-691f-434b-92d8-9f9f49dc7025,Rugby at Parc de la Ciutadella,Rugby,Parc de la Ciutadella,Barcelona,2025-05-20,10:00,11:30,14,4,Riley,,41.3887,2.188
+e12d5097-88fb-4ae7-b66a-dafc98caa073,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-06-08,14:00,15:00,12,4,Sam,,51.507268,-0.16573
+21d38e31-b148-44a2-97c6-ef2c622a0004,Basketball at Central Park,Basketball,Central Park,New York,2025-05-15,13:00,15:00,13,1,Drew,,40.785091,-73.968285
+1afa5d30-12e4-4635-b5b9-6b5b140d005c,Soccer at Hyde Park,Soccer,Hyde Park,London,2025-05-29,10:00,11:00,12,4,Sam,,51.507268,-0.16573
+e06deae1-e351-41bb-9bd4-25b0b12498d4,Cricket at Central Park,Cricket,Central Park,New York,2025-05-26,06:00,07:00,20,16,Jordan,,40.785091,-73.968285
+2281717a-ac6c-4d07-908f-fee158a4d3de,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-28,07:00,08:00,12,3,Jordan,,-22.9161,-43.1699
+eca5c792-c129-4d87-bc68-165961947ae9,Soccer at High Park,Soccer,High Park,Toronto,2025-05-14,13:00,14:00,17,10,Alex,,43.6465,-79.4637
+90c74ceb-7d10-4d10-9a4d-591a1d24fa6e,Volleyball at Yoyogi Park,Volleyball,Yoyogi Park,Tokyo,2025-05-16,18:00,19:00,15,7,Casey,,35.672855,139.694944
+33d7bebf-5a6f-4483-9b4b-2a910e90f5dc,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-18,10:00,12:00,19,17,Drew,,-22.9161,-43.1699
+2089e17b-c426-4304-9434-f3d9d5b0dff9,Cricket at Central Park,Cricket,Central Park,New York,2025-05-21,11:00,13:00,15,3,Sam,,40.785091,-73.968285
+7b981785-5b47-4a73-a56d-07d10362767f,Basketball at Flamengo Park,Basketball,Flamengo Park,Rio de Janeiro,2025-06-03,07:00,08:30,22,21,Taylor,,-22.9161,-43.1699
+e9dff04c-856f-4c23-a7fb-85411eb78441,Basketball at Yoyogi Park,Basketball,Yoyogi Park,Tokyo,2025-05-11,13:00,14:00,13,1,Sam,,35.672855,139.694944
+016ea3c1-cc10-4a9b-9e76-6d139f259278,Ultimate Frisbee at Central Park,Ultimate Frisbee,Central Park,New York,2025-05-30,11:00,12:00,20,4,Taylor,,40.785091,-73.968285
+f479e83b-d7c9-43af-b1a9-980729d04e30,Volleyball at Yoyogi Park,Volleyball,Yoyogi Park,Tokyo,2025-05-26,11:00,13:00,7,1,Chris,,35.672855,139.694944
+1f319e59-869b-4e67-b340-d5d462fd57b6,Baseball at Parc de la Ciutadella,Baseball,Parc de la Ciutadella,Barcelona,2025-05-11,08:00,09:00,12,3,Riley,,41.3887,2.188
+ef519578-669b-4981-9558-c603614bb977,Soccer at Lumphini Park,Soccer,Lumphini Park,Bangkok,2025-06-03,15:00,16:00,6,1,Taylor,,13.73,100.541
+08a0a360-d2b4-47f9-9e7a-c2ad406b74b6,Baseball at Parc de la Ciutadella,Baseball,Parc de la Ciutadella,Barcelona,2025-05-20,11:00,12:30,17,16,Chris,,41.3887,2.188
+cb52ce65-a65f-494f-8dd7-67a90441bbf8,Rugby at High Park,Rugby,High Park,Toronto,2025-05-13,12:00,13:00,21,8,Morgan,,43.6465,-79.4637
+402a19c7-aa8b-4b97-bbb1-17953918d81a,Basketball at Centennial Park,Basketball,Centennial Park,Sydney,2025-05-30,08:00,09:00,10,3,Alex,,-33.896,151.241
+b87d7449-0806-4be2-be1e-eac9b65262b3,Tennis at Centennial Park,Tennis,Centennial Park,Sydney,2025-06-08,09:00,11:00,14,12,Jamie,,-33.896,151.241
+e2d5c382-e57a-4643-b3db-65355241d1ac,Baseball at Parc des Buttes-Chaumont,Baseball,Parc des Buttes-Chaumont,Paris,2025-06-03,17:00,18:30,7,1,Alex,,48.880949,2.38214
+f9da42a9-bf00-4ef4-b600-690ae8660679,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-05-20,15:00,17:00,17,3,Sam,,51.507268,-0.16573
+0f3a7712-e8c2-437c-8a01-da96f0fe10f5,Ultimate Frisbee at Flamengo Park,Ultimate Frisbee,Flamengo Park,Rio de Janeiro,2025-05-18,08:00,10:00,16,5,Riley,,-22.9161,-43.1699
+7ee9e46b-eb53-45fd-ad04-2107e55dfb48,Tennis at Central Park,Tennis,Central Park,New York,2025-06-04,18:00,19:00,10,8,Jordan,,40.785091,-73.968285
+98fd7475-f975-4fc4-9f76-66d56225e9e1,Tennis at Central Park,Tennis,Central Park,New York,2025-06-04,12:00,13:30,15,4,Sam,,40.785091,-73.968285
+2d68bb35-3b19-44a8-99d0-f83da3b43160,Tennis at Green Point Urban Park,Tennis,Green Point Urban Park,Cape Town,2025-05-16,17:00,18:30,12,7,Jamie,,-33.9036,18.4098
+e4813408-d34c-442b-8627-22eb6d359f4c,Ultimate Frisbee at High Park,Ultimate Frisbee,High Park,Toronto,2025-05-23,15:00,16:00,14,8,Taylor,,43.6465,-79.4637
+1ec84bed-a0cd-4da9-857d-cdb7fb91a62c,Soccer at Lumphini Park,Soccer,Lumphini Park,Bangkok,2025-06-04,07:00,09:00,8,1,Chris,,13.73,100.541
+bd3449de-4d03-4a02-a7dc-d73fd96986c4,Volleyball at Green Point Urban Park,Volleyball,Green Point Urban Park,Cape Town,2025-05-30,07:00,08:30,14,1,Jamie,,-33.9036,18.4098
+c6f47a22-fffe-4751-bd47-9667fdd6faa2,Soccer at Centennial Park,Soccer,Centennial Park,Sydney,2025-06-01,15:00,16:30,22,9,Sam,,-33.896,151.241
+5fc50a7e-89ea-4851-af31-5c6b3b71b3ac,Basketball at Central Park,Basketball,Central Park,New York,2025-05-17,18:00,19:30,9,4,Jordan,,40.785091,-73.968285
+022436e2-6213-4ea3-9750-23c93c1916a5,Tennis at Parc des Buttes-Chaumont,Tennis,Parc des Buttes-Chaumont,Paris,2025-05-15,10:00,11:00,12,10,Drew,,48.880949,2.38214
+2a37b115-e8ed-462d-b552-8e484134ba91,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-20,11:00,13:00,11,3,Jamie,,-22.9161,-43.1699
+641658bc-e523-454b-8d19-e458f80dc58d,Soccer at Yoyogi Park,Soccer,Yoyogi Park,Tokyo,2025-05-11,11:00,12:00,22,19,Morgan,,35.672855,139.694944
+121221ec-443d-45f8-bd0c-0bd2287eccd7,Rugby at Central Park,Rugby,Central Park,New York,2025-05-16,14:00,15:30,10,5,Casey,,40.785091,-73.968285
+317aa01e-d73b-421b-8e3a-935f7ba68ddc,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-06-07,10:00,12:00,11,10,Jamie,,13.73,100.541
+1f871509-95db-4eb3-bd10-a3b459ee50e0,Rugby at Lumphini Park,Rugby,Lumphini Park,Bangkok,2025-05-16,09:00,10:00,13,11,Casey,,13.73,100.541
+de84944a-b019-448f-8eca-05b86c3d2cd4,Ultimate Frisbee at Lumphini Park,Ultimate Frisbee,Lumphini Park,Bangkok,2025-05-31,12:00,13:30,15,1,Jordan,,13.73,100.541
+6008c4c0-880a-4c8e-8a4d-cc6fcdc1eb04,Volleyball at Centennial Park,Volleyball,Centennial Park,Sydney,2025-05-14,14:00,16:00,13,12,Sam,,-33.896,151.241
+2eaed265-1508-4610-8112-9003f0b95ee3,Basketball at Lumphini Park,Basketball,Lumphini Park,Bangkok,2025-05-13,07:00,08:30,14,4,Morgan,,13.73,100.541
+2a1854e7-85c1-42c8-b136-9ef92e9db128,Rugby at Parc de la Ciutadella,Rugby,Parc de la Ciutadella,Barcelona,2025-05-10,11:00,12:00,11,5,Morgan,,41.3887,2.188
+54cb3fa7-2924-4f5a-8bb0-0c15acc39c9c,Basketball at Parc des Buttes-Chaumont,Basketball,Parc des Buttes-Chaumont,Paris,2025-06-05,10:00,12:00,12,3,Jamie,,48.880949,2.38214
+a4b0f319-b870-4a7c-bde3-10cb354c77a7,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-28,09:00,10:00,16,12,Jamie,,-22.9161,-43.1699
+37d87612-2578-4bdc-bbd2-a82059f01faa,Rugby at Hyde Park,Rugby,Hyde Park,London,2025-06-08,12:00,13:00,21,10,Sam,,51.507268,-0.16573
+08c7e2cc-c3ac-43ef-a9ca-aaeb4bb527c4,Cricket at Centennial Park,Cricket,Centennial Park,Sydney,2025-06-02,09:00,11:00,17,16,Riley,,-33.896,151.241
+b21f3c68-f0f0-43c9-a4a8-4087322de203,Rugby at Yoyogi Park,Rugby,Yoyogi Park,Tokyo,2025-05-25,13:00,14:00,18,14,Sam,,35.672855,139.694944
+a945ee79-bd1c-4442-be11-c5e4582c87be,Soccer at Flamengo Park,Soccer,Flamengo Park,Rio de Janeiro,2025-05-28,10:00,12:00,22,16,Jordan,,-22.9161,-43.1699
+110235ef-46c3-4eaf-8c94-051cf9c1970a,Tennis at Central Park,Tennis,Central Park,New York,2025-05-19,16:00,18:00,17,9,Riley,,40.785091,-73.968285
+ca2aec29-09e4-4047-a54e-3f7bd0c30b40,Cricket at High Park,Cricket,High Park,Toronto,2025-05-19,12:00,14:00,15,8,Chris,,43.6465,-79.4637
+e07764a1-3a06-4491-814b-59d13fab8bf5,Baseball at Yoyogi Park,Baseball,Yoyogi Park,Tokyo,2025-05-23,06:00,07:30,7,5,Drew,,35.672855,139.694944
+2b377f38-2781-4bb0-bfa7-a12f518635af,Ultimate Frisbee at Green Point Urban Park,Ultimate Frisbee,Green Point Urban Park,Cape Town,2025-06-04,08:00,09:30,21,20,Jamie,,-33.9036,18.4098
+08dca511-0ade-4bb0-8e06-54f4cdc0fd15,Volleyball at Centennial Park,Volleyball,Centennial Park,Sydney,2025-05-20,08:00,09:30,20,17,Jamie,,-33.896,151.241
+2c401956-3727-4a19-94d5-d85ad1fbdefa,Soccer at Yoyogi Park,Soccer,Yoyogi Park,Tokyo,2025-05-30,17:00,18:00,22,1,Jordan,,35.672855,139.694944
+8fb28b13-cf3b-4fb0-aefc-034285bce63f,Tennis at Parc de la Ciutadella,Tennis,Parc de la Ciutadella,Barcelona,2025-05-24,14:00,15:00,22,13,Sam,,41.3887,2.188
+43a1caac-9d55-4fc4-b4f6-af9c380ad7f7,Basketball at Hyde Park,Basketball,Hyde Park,London,2025-05-25,15:00,17:00,8,4,Jordan,,51.507268,-0.16573
+a253fd66-4ae7-4849-8619-71b3cbbf1c38,Basketball at High Park,Basketball,High Park,Toronto,2025-05-30,15:00,16:30,16,3,Casey,,43.6465,-79.4637
+5a8068f5-4aa6-4bee-b70f-ca98d81582ed,Rugby at Flamengo Park,Rugby,Flamengo Park,Rio de Janeiro,2025-05-30,07:00,08:30,15,6,Drew,,-22.9161,-43.1699
+28b429de-60d5-4b4b-8446-52f89b793058,Tennis at Green Point Urban Park,Tennis,Green Point Urban Park,Cape Town,2025-05-11,18:00,19:30,6,1,Taylor,,-33.9036,18.4098
+afe67074-df0a-419e-a6e5-4edc7f2ae09b,Volleyball at Green Point Urban Park,Volleyball,Green Point Urban Park,Cape Town,2025-05-29,09:00,10:30,8,1,Alex,,-33.9036,18.4098
+988f2663-7f81-4da0-9602-ce23aa4cd379,Basketball at Green Point Urban Park,Basketball,Green Point Urban Park,Cape Town,2025-05-21,07:00,09:00,19,14,Jamie,,-33.9036,18.4098
+6f899de9-ef2f-4bd3-a34d-f6d600e263fa,Rugby at Parc des Buttes-Chaumont,Rugby,Parc des Buttes-Chaumont,Paris,2025-06-08,12:00,13:00,22,16,Morgan,,48.880949,2.38214
+a5895b40-901a-4c5d-b2e4-3bef546500c7,Tennis at Parc des Buttes-Chaumont,Tennis,Parc des Buttes-Chaumont,Paris,2025-05-27,16:00,17:00,22,2,Alex,,48.880949,2.38214
+a068b446-bec8-4230-bf78-0efe171a85a2,Tennis at Central Park,Tennis,Central Park,New York,2025-05-22,07:00,08:00,14,2,Casey,,40.785091,-73.968285
+84853944-f76b-43c4-9061-65c073ded74c,Cricket at Centennial Park,Cricket,Centennial Park,Sydney,2025-05-19,13:00,14:30,10,3,Morgan,,-33.896,151.241
+10687553-3aa0-410b-91cd-4d6cfe1ebc73,Baseball at Centennial Park,Baseball,Centennial Park,Sydney,2025-05-11,13:00,14:30,12,9,Jordan,,-33.896,151.241
+a5a9e928-6094-4dbf-bee9-7a5ebb03e4b9,Rugby at Green Point Urban Park,Rugby,Green Point Urban Park,Cape Town,2025-05-10,11:00,12:00,12,10,Jordan,,-33.9036,18.4098
+c0ebfa5d-9f91-44f5-a54e-d95cc43f2692,Tennis at Parc des Buttes-Chaumont,Tennis,Parc des Buttes-Chaumont,Paris,2025-05-18,15:00,16:30,11,9,Taylor,,48.880949,2.38214
+a50aa2e3-a99d-4db5-b934-897e1aa17555,Baseball at Hyde Park,Baseball,Hyde Park,London,2025-05-30,11:00,12:00,11,4,Morgan,,51.507268,-0.16573
+1d7a6ea8-b638-4ebe-bf2a-a2f2cf4bb604,Cricket at Parc des Buttes-Chaumont,Cricket,Parc des Buttes-Chaumont,Paris,2025-06-06,09:00,10:30,14,2,Chris,,48.880949,2.38214
+d20e0dae-f95e-42c7-875d-5ff46b8aa635,Volleyball at High Park,Volleyball,High Park,Toronto,2025-06-04,14:00,16:00,16,1,Riley,,43.6465,-79.4637
+9fec000d-f20c-473e-b1f3-e321c0ff8497,Volleyball at Hyde Park,Volleyball,Hyde Park,London,2025-05-27,06:00,07:30,11,3,Morgan,,51.507268,-0.16573
+c14c2804-15d4-4f08-94d3-c4b3e31e840b,Cricket at Central Park,Cricket,Central Park,New York,2025-05-13,11:00,12:00,17,1,Jordan,,40.785091,-73.968285
+92d888cd-65db-42a2-bcda-636b54ef1e1e,Baseball at Parc des Buttes-Chaumont,Baseball,Parc des Buttes-Chaumont,Paris,2025-05-28,06:00,07:00,13,7,Morgan,,48.880949,2.38214
+9742ddec-8be5-4dbc-aa7d-7f0c88b4929b,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-05-27,08:00,10:00,19,1,Sam,,48.880949,2.38214
+8022c96b-464b-437f-a4ef-dc505a4be54b,Soccer at Green Point Urban Park,Soccer,Green Point Urban Park,Cape Town,2025-05-17,06:00,07:30,7,2,Jordan,,-33.9036,18.4098
+39e31e05-4e2b-42c5-9cc6-dc344230116a,Ultimate Frisbee at Green Point Urban Park,Ultimate Frisbee,Green Point Urban Park,Cape Town,2025-06-02,13:00,14:00,16,10,Morgan,,-33.9036,18.4098
+f4808cce-f18f-4593-9543-bc154ac93c01,Cricket at Lumphini Park,Cricket,Lumphini Park,Bangkok,2025-05-17,08:00,09:30,14,5,Drew,,13.73,100.541
+63fc24a2-ff2f-4b0f-9830-005fb904c263,Ultimate Frisbee at Centennial Park,Ultimate Frisbee,Centennial Park,Sydney,2025-06-05,12:00,13:30,10,5,Morgan,,-33.896,151.241
+c7546c45-9c76-4c7f-8f39-b935436ecc9e,Basketball at High Park,Basketball,High Park,Toronto,2025-05-22,11:00,12:30,17,8,Alex,,43.6465,-79.4637
+5b674946-773e-4d90-910c-6d2710804806,Tennis at Lumphini Park,Tennis,Lumphini Park,Bangkok,2025-06-07,15:00,16:00,12,11,Drew,,13.73,100.541
+135585b7-654e-455a-8b34-5f5b72c1eccc,Basketball at Flamengo Park,Basketball,Flamengo Park,Rio de Janeiro,2025-06-01,14:00,16:00,10,2,Taylor,,-22.9161,-43.1699
+1aeaeec5-0171-44f7-ad70-c1a7237d1287,Basketball at High Park,Basketball,High Park,Toronto,2025-05-15,06:00,07:30,20,3,Jamie,,43.6465,-79.4637
+765e5b9d-9462-4f8c-87ee-8563b869e2ed,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-05-20,16:00,17:30,13,7,Alex,,51.507268,-0.16573
+01f7b125-4568-4946-8f5e-8149dc56dced,Cricket at Lumphini Park,Cricket,Lumphini Park,Bangkok,2025-05-14,09:00,11:00,20,7,Jamie,,13.73,100.541
+a76e4713-de7a-4090-a44f-55e5feb585d0,Cricket at Yoyogi Park,Cricket,Yoyogi Park,Tokyo,2025-06-06,14:00,16:00,17,6,Riley,,35.672855,139.694944
+972aab3c-4e4c-4cb8-889a-b0d5ba831e82,Basketball at High Park,Basketball,High Park,Toronto,2025-05-26,10:00,11:30,21,4,Riley,,43.6465,-79.4637
+11337a9e-f454-41e9-af59-99b6c387d9db,Volleyball at Green Point Urban Park,Volleyball,Green Point Urban Park,Cape Town,2025-05-31,09:00,11:00,11,6,Jamie,,-33.9036,18.4098
+64839445-04f4-4ab8-b8e4-3ca26327b9c6,Cricket at High Park,Cricket,High Park,Toronto,2025-06-02,18:00,19:00,8,2,Alex,,43.6465,-79.4637
+4e9314a3-e53a-4952-b777-cecb127740d4,Ultimate Frisbee at Yoyogi Park,Ultimate Frisbee,Yoyogi Park,Tokyo,2025-05-23,09:00,11:00,15,7,Jamie,,35.672855,139.694944
+7122c288-955d-469c-8788-89e7f88e7c7d,Ultimate Frisbee at Hyde Park,Ultimate Frisbee,Hyde Park,London,2025-05-18,14:00,16:00,20,7,Sam,,51.507268,-0.16573
+e4899dd1-c159-4b36-ba0b-c2ec2cfd9d12,Cricket at Central Park,Cricket,Central Park,New York,2025-05-30,06:00,07:00,16,2,Chris,,40.785091,-73.968285
+2c3c1e9c-d5f7-49ec-baf7-716fb9f80e4c,Tennis at Central Park,Tennis,Central Park,New York,2025-06-03,15:00,16:00,11,8,Taylor,,40.785091,-73.968285
+ee108679-fd4e-4681-950d-c1f41d7834a4,Cricket at Yoyogi Park,Cricket,Yoyogi Park,Tokyo,2025-05-26,08:00,10:00,10,2,Jordan,,35.672855,139.694944
+dffe8aac-9757-465c-8a14-0fc980b449ed,Rugby at Hyde Park,Rugby,Hyde Park,London,2025-06-04,10:00,12:00,19,5,Taylor,,51.507268,-0.16573
+88e49e16-c16a-402b-9a10-659881344bd3,Volleyball at Hyde Park,Volleyball,Hyde Park,London,2025-05-16,12:00,13:30,17,6,Jamie,,51.507268,-0.16573
+df08a61e-ca0f-45dc-8a59-80b49f5ecd92,Volleyball at Central Park,Volleyball,Central Park,New York,2025-06-04,12:00,14:00,15,10,Morgan,,40.785091,-73.968285
+ca587757-b461-4d3f-b064-a95ab22a41c9,Basketball at Flamengo Park,Basketball,Flamengo Park,Rio de Janeiro,2025-05-31,06:00,07:30,18,13,Sam,,-22.9161,-43.1699
+d3984ee7-6021-482d-a32c-928867187e37,Cricket at High Park,Cricket,High Park,Toronto,2025-05-10,06:00,07:00,21,19,Taylor,,43.6465,-79.4637
+25a17ea0-90c6-4136-a23c-651e77acd2d9,Tennis at Centennial Park,Tennis,Centennial Park,Sydney,2025-05-20,07:00,08:30,10,7,Morgan,,-33.896,151.241
+cab97afb-342e-4b0f-bab8-82d68a62310a,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-06-01,14:00,15:00,14,9,Jamie,,51.507268,-0.16573
+9546831a-c58a-44ce-aea8-49adb5b7cb5b,Rugby at Parc de la Ciutadella,Rugby,Parc de la Ciutadella,Barcelona,2025-05-21,07:00,08:00,7,4,Casey,,41.3887,2.188
+d35293f3-a87a-4755-b2d6-7df44b180590,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-26,09:00,11:00,9,6,Jordan,,-22.9161,-43.1699
+65af7950-4ef6-49f2-94a5-12d0c8f49ea0,Baseball at Green Point Urban Park,Baseball,Green Point Urban Park,Cape Town,2025-05-29,07:00,08:00,11,6,Jamie,,-33.9036,18.4098
+21d557b4-e42f-419b-ad79-ed6a16839c74,Ultimate Frisbee at Green Point Urban Park,Ultimate Frisbee,Green Point Urban Park,Cape Town,2025-05-28,07:00,08:30,12,8,Sam,,-33.9036,18.4098
+d22a7466-b97a-4f1a-b0bc-6ffc6dc267b1,Ultimate Frisbee at Parc de la Ciutadella,Ultimate Frisbee,Parc de la Ciutadella,Barcelona,2025-05-31,13:00,14:00,14,10,Jordan,,41.3887,2.188
+2db0d018-ff83-48be-81c8-e7ec592adab5,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-06-03,14:00,15:30,18,13,Morgan,,48.880949,2.38214
+cdfc4210-bb9f-4577-a1e8-42ffe2da5590,Tennis at Lumphini Park,Tennis,Lumphini Park,Bangkok,2025-05-23,09:00,10:00,14,10,Chris,,13.73,100.541
+c467adb2-3f26-41f0-8714-42bcfdc8215a,Baseball at Flamengo Park,Baseball,Flamengo Park,Rio de Janeiro,2025-05-21,11:00,12:00,8,1,Riley,,-22.9161,-43.1699
+9a2e3db5-91a5-4a82-909a-b1b8f140de1d,Soccer at Green Point Urban Park,Soccer,Green Point Urban Park,Cape Town,2025-05-13,15:00,17:00,20,11,Jordan,,-33.9036,18.4098
+ffa6b6e1-4842-4284-8ab0-bf8dc947d26e,Soccer at High Park,Soccer,High Park,Toronto,2025-05-19,09:00,11:00,7,4,Jordan,,43.6465,-79.4637
+01fb48b8-a19a-42bd-85b3-65d18e67f24b,Volleyball at Central Park,Volleyball,Central Park,New York,2025-05-30,13:00,15:00,14,12,Riley,,40.785091,-73.968285
+314a1e9d-20f4-4e2c-bc5b-3b4b5568e255,Basketball at Yoyogi Park,Basketball,Yoyogi Park,Tokyo,2025-05-15,09:00,11:00,10,6,Morgan,,35.672855,139.694944
+ec79bd50-a76d-4ff3-b1d8-7efd8598852f,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-06-02,09:00,10:30,7,2,Sam,,48.880949,2.38214
+81460b32-b885-4816-a762-171db5986085,Rugby at High Park,Rugby,High Park,Toronto,2025-05-18,08:00,10:00,21,3,Morgan,,43.6465,-79.4637
+5d3953ea-ef77-4dfe-9606-20da6585f564,Ultimate Frisbee at Flamengo Park,Ultimate Frisbee,Flamengo Park,Rio de Janeiro,2025-06-03,06:00,07:00,13,1,Casey,,-22.9161,-43.1699
+d970e4d8-1722-464b-bbe8-b084114e4b91,Cricket at Parc des Buttes-Chaumont,Cricket,Parc des Buttes-Chaumont,Paris,2025-06-01,18:00,19:30,20,13,Sam,,48.880949,2.38214
+96386d81-8232-4470-87bd-93388d989cc1,Soccer at Hyde Park,Soccer,Hyde Park,London,2025-05-18,08:00,10:00,21,10,Casey,,51.507268,-0.16573
+cd6c9096-3168-47ba-a0af-4c248ef61dfd,Soccer at Green Point Urban Park,Soccer,Green Point Urban Park,Cape Town,2025-06-07,06:00,08:00,19,13,Riley,,-33.9036,18.4098
+686a9072-947f-4044-8372-f7684872e853,Cricket at Parc des Buttes-Chaumont,Cricket,Parc des Buttes-Chaumont,Paris,2025-06-01,08:00,09:30,16,9,Sam,,48.880949,2.38214
+87cd95b6-ae26-40fb-a671-21f8ee7d74fa,Ultimate Frisbee at Hyde Park,Ultimate Frisbee,Hyde Park,London,2025-05-25,09:00,11:00,19,16,Sam,,51.507268,-0.16573
+a2c380e7-6fbe-4c41-beb9-894cfdb21dfa,Tennis at Centennial Park,Tennis,Centennial Park,Sydney,2025-06-01,12:00,13:00,18,13,Taylor,,-33.896,151.241
+be03168d-6025-483a-aa38-263a08a5c174,Soccer at Flamengo Park,Soccer,Flamengo Park,Rio de Janeiro,2025-05-17,11:00,12:30,10,1,Sam,,-22.9161,-43.1699
+2d307d6a-61c5-4656-92de-1b936f19ac6d,Basketball at Yoyogi Park,Basketball,Yoyogi Park,Tokyo,2025-06-05,09:00,10:30,14,6,Jordan,,35.672855,139.694944
+932c458d-54f3-4b7c-9079-2694dc469ed5,Ultimate Frisbee at Parc de la Ciutadella,Ultimate Frisbee,Parc de la Ciutadella,Barcelona,2025-05-24,13:00,15:00,8,3,Chris,,41.3887,2.188
+8baedd3c-e3e8-4c23-bfe6-e0cd82cbb8ea,Cricket at Central Park,Cricket,Central Park,New York,2025-05-21,13:00,15:00,14,13,Casey,,40.785091,-73.968285
+416c0ca4-59ff-405b-ad7b-5b9161e6a72a,Rugby at Central Park,Rugby,Central Park,New York,2025-06-08,07:00,08:30,6,3,Morgan,,40.785091,-73.968285
+5b307b77-7ca9-4e73-b463-45978a026707,Rugby at High Park,Rugby,High Park,Toronto,2025-05-19,11:00,12:00,13,11,Casey,,43.6465,-79.4637
+7ce1f302-1390-4e7f-a7fb-fd26273eb05c,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-05-14,18:00,19:30,18,8,Alex,,13.73,100.541
+3210c492-a6e9-4db0-b37e-fa07037bb256,Soccer at Parc de la Ciutadella,Soccer,Parc de la Ciutadella,Barcelona,2025-05-31,10:00,11:30,11,1,Chris,,41.3887,2.188
+782d9c7d-958d-45f5-bd07-12ef09f8d099,Basketball at Centennial Park,Basketball,Centennial Park,Sydney,2025-05-11,09:00,10:00,17,3,Jamie,,-33.896,151.241
+4462482c-e32b-4b53-a302-7a1ce87c7ece,Ultimate Frisbee at Parc des Buttes-Chaumont,Ultimate Frisbee,Parc des Buttes-Chaumont,Paris,2025-05-18,06:00,07:00,9,2,Drew,,48.880949,2.38214
+eefbaa17-89e9-4bdf-9ece-3650eb50f772,Cricket at Lumphini Park,Cricket,Lumphini Park,Bangkok,2025-05-28,07:00,09:00,21,3,Sam,,13.73,100.541
+9ad233fd-cbda-458c-8032-8d6697de83c7,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-05-30,10:00,12:00,6,5,Sam,,51.507268,-0.16573
+6febd4c4-1adc-4096-a9d5-4e19fc659628,Basketball at Central Park,Basketball,Central Park,New York,2025-05-28,07:00,08:00,8,5,Jamie,,40.785091,-73.968285
+5082690d-1326-4ece-a41e-d86ee15bf184,Baseball at Yoyogi Park,Baseball,Yoyogi Park,Tokyo,2025-06-04,10:00,11:30,12,5,Jamie,,35.672855,139.694944
+fa273cf9-683f-4701-86b4-f63ca16c0085,Cricket at Central Park,Cricket,Central Park,New York,2025-05-13,12:00,13:30,20,5,Alex,,40.785091,-73.968285
+af22eee3-54f3-4540-af60-6ef4c1e1aa9f,Basketball at Green Point Urban Park,Basketball,Green Point Urban Park,Cape Town,2025-05-19,16:00,17:00,9,3,Riley,,-33.9036,18.4098
+b62e214a-39fc-4754-bfc5-256412b7f094,Volleyball at Green Point Urban Park,Volleyball,Green Point Urban Park,Cape Town,2025-05-25,11:00,13:00,6,3,Morgan,,-33.9036,18.4098
+c543af85-e790-4cc7-941a-b7ff37e94ed1,Tennis at Yoyogi Park,Tennis,Yoyogi Park,Tokyo,2025-06-01,15:00,16:30,13,12,Jamie,,35.672855,139.694944
+0b5fb744-ac3e-450f-b769-07e9061fa94c,Ultimate Frisbee at Parc des Buttes-Chaumont,Ultimate Frisbee,Parc des Buttes-Chaumont,Paris,2025-05-14,15:00,17:00,20,11,Riley,,48.880949,2.38214
+f271cb5a-e714-460d-af7c-56b1e731d5b6,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-05-16,14:00,15:00,17,5,Taylor,,48.880949,2.38214
+bca912f5-9c2b-48ca-9a5a-f3d4fdaf3605,Ultimate Frisbee at Lumphini Park,Ultimate Frisbee,Lumphini Park,Bangkok,2025-05-15,17:00,18:00,20,3,Drew,,13.73,100.541
+be1f2191-3cf5-4954-942f-b3838ebf3861,Soccer at Green Point Urban Park,Soccer,Green Point Urban Park,Cape Town,2025-05-27,16:00,17:30,20,1,Morgan,,-33.9036,18.4098
+ee915e98-4448-4a8b-8788-1e500ead9076,Basketball at Yoyogi Park,Basketball,Yoyogi Park,Tokyo,2025-05-21,16:00,17:30,8,2,Jamie,,35.672855,139.694944
+9ad42548-e8fe-45ec-9dd9-4de215774be4,Basketball at Parc des Buttes-Chaumont,Basketball,Parc des Buttes-Chaumont,Paris,2025-05-15,09:00,10:30,9,6,Drew,,48.880949,2.38214
+8f774a69-26ed-40d1-83be-dc7139cb132c,Tennis at Green Point Urban Park,Tennis,Green Point Urban Park,Cape Town,2025-05-20,08:00,10:00,16,6,Alex,,-33.9036,18.4098
+ecb4638d-2c9b-4cc9-9535-c1693b9fe50c,Baseball at High Park,Baseball,High Park,Toronto,2025-06-07,10:00,11:30,20,16,Riley,,43.6465,-79.4637
+e957763b-aadb-4866-994f-7348cad40f5b,Tennis at Lumphini Park,Tennis,Lumphini Park,Bangkok,2025-05-14,14:00,16:00,11,5,Riley,,13.73,100.541
+2e357316-3dcd-4a2d-b1cf-f19cfd90c843,Baseball at Green Point Urban Park,Baseball,Green Point Urban Park,Cape Town,2025-05-21,12:00,14:00,7,2,Casey,,-33.9036,18.4098
+42501049-0a25-4e5b-9f8c-260b9ac8e795,Cricket at High Park,Cricket,High Park,Toronto,2025-06-04,14:00,15:00,21,19,Casey,,43.6465,-79.4637
+c38fd629-a56e-4ab9-b3ef-9e922de6b52a,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-06-06,08:00,09:30,8,5,Chris,,13.73,100.541
+e36f1c19-9fb9-491b-a2b6-e4ada79d3f49,Volleyball at Hyde Park,Volleyball,Hyde Park,London,2025-05-16,10:00,12:00,17,3,Alex,,51.507268,-0.16573
+e9206ca0-f1e9-4a9f-b778-72792a614561,Basketball at Flamengo Park,Basketball,Flamengo Park,Rio de Janeiro,2025-05-22,06:00,07:30,19,11,Jordan,,-22.9161,-43.1699
+fae2203e-4645-4955-9f2a-bb7cfc0ffadd,Volleyball at Parc des Buttes-Chaumont,Volleyball,Parc des Buttes-Chaumont,Paris,2025-05-28,12:00,13:30,18,15,Chris,,48.880949,2.38214
+f2e29144-9b71-4993-a0ef-53976c284fcf,Rugby at Lumphini Park,Rugby,Lumphini Park,Bangkok,2025-05-18,16:00,18:00,11,5,Jordan,,13.73,100.541
+9f7c0002-9520-4f8f-a6bf-651de87b54e0,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-06-07,12:00,14:00,13,10,Jamie,,48.880949,2.38214
+cb31f24c-f775-4e07-ac2b-061d2c397442,Basketball at Parc de la Ciutadella,Basketball,Parc de la Ciutadella,Barcelona,2025-06-03,07:00,08:00,6,4,Casey,,41.3887,2.188
+40193dab-03be-407b-a42d-4a5b8a93b047,Cricket at High Park,Cricket,High Park,Toronto,2025-06-04,17:00,18:00,19,14,Sam,,43.6465,-79.4637
+2df8dbd4-9467-46b5-8188-b926ad7308f0,Volleyball at Lumphini Park,Volleyball,Lumphini Park,Bangkok,2025-05-31,14:00,15:30,16,3,Riley,,13.73,100.541
+b72299ca-e1cb-4d4f-bb5e-0e2068406000,Volleyball at Parc de la Ciutadella,Volleyball,Parc de la Ciutadella,Barcelona,2025-05-13,07:00,08:30,21,4,Jamie,,41.3887,2.188
+dbcb164f-5272-4011-aceb-8c6d18c4917d,Basketball at Parc de la Ciutadella,Basketball,Parc de la Ciutadella,Barcelona,2025-05-28,08:00,09:30,16,1,Taylor,,41.3887,2.188
+90f1106a-e7dc-46d0-bba8-961f9c1c8483,Ultimate Frisbee at Parc des Buttes-Chaumont,Ultimate Frisbee,Parc des Buttes-Chaumont,Paris,2025-05-27,08:00,10:00,15,3,Alex,,48.880949,2.38214
+f039c96e-9d3e-4f9f-ae20-c84fa260cb60,Ultimate Frisbee at Central Park,Ultimate Frisbee,Central Park,New York,2025-06-01,08:00,10:00,12,7,Alex,,40.785091,-73.968285
+adef847c-0c97-4d96-ab2b-ecf873fa29f9,Volleyball at Hyde Park,Volleyball,Hyde Park,London,2025-06-05,13:00,15:00,12,2,Drew,,51.507268,-0.16573
+03cb7a9c-c38d-4842-8e34-b3e7f390fbf1,Cricket at Lumphini Park,Cricket,Lumphini Park,Bangkok,2025-05-18,15:00,17:00,21,20,Jordan,,13.73,100.541
+54a64d31-1a5a-4e0e-afb4-b955720964e4,Cricket at Green Point Urban Park,Cricket,Green Point Urban Park,Cape Town,2025-05-16,07:00,08:30,7,6,Morgan,,-33.9036,18.4098
+7bc30ab6-bb13-46fc-bbeb-c01c2cd6e1c9,Tennis at Parc des Buttes-Chaumont,Tennis,Parc des Buttes-Chaumont,Paris,2025-05-30,09:00,10:00,11,10,Taylor,,48.880949,2.38214
+16976321-3212-4c1c-9b0e-47d39309f906,Ultimate Frisbee at Flamengo Park,Ultimate Frisbee,Flamengo Park,Rio de Janeiro,2025-06-05,15:00,16:30,18,12,Morgan,,-22.9161,-43.1699
+337813d9-f0fd-4551-b016-1693281c198f,Soccer at Parc de la Ciutadella,Soccer,Parc de la Ciutadella,Barcelona,2025-06-05,14:00,16:00,9,8,Drew,,41.3887,2.188
+d18058f2-2717-418b-a90d-a1e308bab7e2,Baseball at Lumphini Park,Baseball,Lumphini Park,Bangkok,2025-05-12,16:00,17:30,16,7,Alex,,13.73,100.541
+0ff096d1-ef3a-4128-aa7b-1962fa52d6d2,Volleyball at Green Point Urban Park,Volleyball,Green Point Urban Park,Cape Town,2025-05-23,07:00,09:00,10,5,Chris,,-33.9036,18.4098
+c8df853a-87f5-4c4f-b6c1-59af7e4e039b,Baseball at Parc de la Ciutadella,Baseball,Parc de la Ciutadella,Barcelona,2025-05-22,15:00,16:30,17,3,Chris,,41.3887,2.188
+c89f70e4-00d7-4287-a82a-75c78e716aa0,Tennis at Hyde Park,Tennis,Hyde Park,London,2025-06-08,15:00,16:30,14,8,Drew,,51.507268,-0.16573
+331ec5d1-a6cf-4f3c-9819-b6b759ba522b,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-28,08:00,09:00,9,8,Sam,,-22.9161,-43.1699
+ee87fbf1-e4de-46ea-948f-7e1029507ce5,Ultimate Frisbee at Parc des Buttes-Chaumont,Ultimate Frisbee,Parc des Buttes-Chaumont,Paris,2025-05-25,13:00,14:00,20,6,Riley,,48.880949,2.38214
+31e9e7dd-4604-4dd5-ad47-f1b40a4f0415,Tennis at Parc des Buttes-Chaumont,Tennis,Parc des Buttes-Chaumont,Paris,2025-05-16,10:00,11:30,18,7,Riley,,48.880949,2.38214
+94c6d45f-d603-4fb7-ae0e-08fcf11a0735,Rugby at Parc de la Ciutadella,Rugby,Parc de la Ciutadella,Barcelona,2025-05-26,08:00,09:00,10,9,Riley,,41.3887,2.188
+70a29f66-4e5b-4992-97d8-4de3811c0e84,Ultimate Frisbee at Parc des Buttes-Chaumont,Ultimate Frisbee,Parc des Buttes-Chaumont,Paris,2025-05-13,06:00,07:00,6,5,Drew,,48.880949,2.38214
+fd402a42-8800-48a7-aae8-4e314b90e978,Tennis at Flamengo Park,Tennis,Flamengo Park,Rio de Janeiro,2025-05-18,10:00,11:30,22,19,Jamie,,-22.9161,-43.1699
+8e07b84f-2d2b-4834-b610-efac46edaf21,Basketball at Hyde Park,Basketball,Hyde Park,London,2025-05-14,07:00,08:30,6,1,Jamie,,51.507268,-0.16573
+d861b485-b439-4fcd-953c-9548fc3f8cd6,Cricket at Flamengo Park,Cricket,Flamengo Park,Rio de Janeiro,2025-05-10,18:00,19:30,14,9,Morgan,,-22.9161,-43.1699
+3ff8cd50-ab81-40b7-8760-90483baa7562,Rugby at Flamengo Park,Rugby,Flamengo Park,Rio de Janeiro,2025-05-17,16:00,17:30,13,2,Drew,,-22.9161,-43.1699
+6af7e4af-cbdf-42d2-9fe1-a03ec7e3d6ef,Rugby at Parc de la Ciutadella,Rugby,Parc de la Ciutadella,Barcelona,2025-06-03,18:00,19:00,8,3,Sam,,41.3887,2.188
+3d48724f-ff2f-4c73-86ea-1f62bf36b768,Ultimate Frisbee at High Park,Ultimate Frisbee,High Park,Toronto,2025-05-14,07:00,08:30,8,3,Sam,,43.6465,-79.4637
+da0c75d6-6b9f-4c7d-b116-74a5db6d757e,Volleyball at Parc des Buttes-Chaumont,Volleyball,Parc des Buttes-Chaumont,Paris,2025-05-27,15:00,16:30,22,3,Morgan,,48.880949,2.38214
+0fc464db-c809-4e16-8071-087785ddb5cb,Soccer at Parc des Buttes-Chaumont,Soccer,Parc des Buttes-Chaumont,Paris,2025-06-02,12:00,14:00,6,2,Chris,,48.880949,2.38214
+02fb0ccd-395a-4564-9082-47ff122e7b78,Soccer at Hyde Park,Soccer,Hyde Park,London,2025-06-06,11:00,12:30,21,2,Jordan,,51.507268,-0.16573
+80ea765d-984b-4979-9757-27cb105cf81a,Volleyball at Central Park,Volleyball,Central Park,New York,2025-06-01,17:00,19:00,10,6,Drew,,40.785091,-73.968285
+cc958d0c-b5fa-474c-b200-9a9a62e06ccb,Tennis at Central Park,Tennis,Central Park,New York,2025-06-04,07:00,08:00,9,4,Morgan,,40.785091,-73.968285
+5dd60410-7179-4674-9138-b58d9aa4378b,Tennis at Parc de la Ciutadella,Tennis,Parc de la Ciutadella,Barcelona,2025-05-16,16:00,17:30,19,16,Morgan,,41.3887,2.188
+ff576c73-c380-47c2-87a2-f6119288cbf8,1,,1,,,,,1,0,,,,
+2b54b6e1-5dd0-4e91-aad7-b8e94d57cdf0,1,,1,,,,,1,0,,,,
+0dd8a137-8191-45d4-bbd3-8a19e0378643,1,,1,,,,,1,0,,,,
+b7307ef2-8008-44b8-9b4e-88323740c63e,123,,123,,,,,123,0,,,,
+167360dc-8aa6-452e-920a-4e7d3e57dc00,123,,123,,,,,123,0,,,,
+95e74105-e41e-46b0-86e6-fae95a58db99,f,,f,,,,,f,0,,,,
+e67925e3-c586-4d2b-b8a8-1fb1836678e3,f,,f,,,,,f,0,,,,
+32b6d3ae-7a2d-4fdf-9f7c-2658e6d7bb1e,1,,2,,,,,2,0,,,,
+999f4003-fddf-4e2f-8800-635ad0fae167,1,,1,,,,,1,0,,,,
+14a2c730-c1ea-4a3f-b881-b53824ccbf7d,,,,,,,,,0,,,,
+2020e33a-158e-4e82-96b4-e081ab713993,1,,2,,,,,2,0,,,,
+d2f71918-40d1-4f7e-96f5-626dfbb9d3cd,1,,2,,,,,3,0,,,,
+592f2a43-bac8-4140-ad88-8eb2cca93452,1,,2,,,,,3,0,,,,
+2852083c-7002-4425-87ce-feb84204e941,1,,2,,,,,3,0,,,,
+c7ee952c-6d11-4d49-8195-e4283e8346cf,1,,2,,,,,3,0,,,,
+bace1c49-db0e-49dd-aa2f-aab1ba0ec1b2,hello,,2,,,,,3,0,,,,
+9df49b8a-d102-4216-a850-c9e545492c86,hello,,2,,,,,3,0,,,,
+9d3b260b-0cf1-4780-b0e8-2e7b6031dd2f,hello,,2,,,,,3,0,,,,
+597a4ce6-cea2-4e0f-b6ce-356d8eb92378,hello,,world,,,,,1,0,,,,
+aff5881d-0125-464f-8b2d-1e31c6162498,hello,,world,,,,,max,0,,,,
+e659e2c1-b6fb-4a16-8a3d-98115f195526,test,,test,,,,,10,0,,,,

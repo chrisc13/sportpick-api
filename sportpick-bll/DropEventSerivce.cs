@@ -1,5 +1,6 @@
 using sportpick_dal;
 using sportpick_domain;
+using System;
 
 namespace sportpick_bll;
 public class DropEventService : IDropEventService{
@@ -10,30 +11,41 @@ public class DropEventService : IDropEventService{
         _dropEventRepository = dropEventRepository;
     }
 
-    public List<DropEvent> GetAllDropEvents(){
+    public async Task<List<DropEvent>> GetAllDropEventsAsync(){
         List<DropEvent> dropEvents = new List<DropEvent>();
-        dropEvents = _dropEventRepository.GetAllDropEventInfo();
+        dropEvents = await _dropEventRepository.GetAllDropEventInfoAsync();
 
         return dropEvents;
     }
 
-    public List<DropEvent> GetTopThreePopular()
+    public async Task<List<DropEvent>> GetTopThreePopularAsync()
     {
-        var dropEvents = _dropEventRepository.GetAllDropEventInfo();
+        var dropEvents = await _dropEventRepository.GetAllDropEventInfoAsync();
 
         if (dropEvents == null || dropEvents.Count == 0)
             return new List<DropEvent>();
 
         // Order descending by CurrentPlayers
-        dropEvents = dropEvents.OrderByDescending(de => de.CurrentPlayers).ToList();
+        dropEvents = dropEvents.OrderByDescending(de => de.Start).ToList();
 
-        // Take up to 3 items
         return dropEvents.Take(3).ToList();
     }
 
 
-    public bool CreateEvent(DropEvent newEvent){
-        var result = _dropEventRepository.CreateEvent(newEvent);
+    public async Task<bool> CreateEventAsync(DropEvent newEvent){
+        var result = await _dropEventRepository.CreateEventAsync(newEvent);
+        if (!result){
+            return false;
+        }
+        return true;
+    }
+
+    public async Task<bool> AttendEventAsync(Attendee attendee, string eventId){
+        if (String.IsNullOrEmpty(attendee.Username) || String.IsNullOrEmpty(attendee.Id) || String.IsNullOrEmpty(eventId)){
+            return false;
+        }
+
+        var result = await _dropEventRepository.AttendEventAsync(attendee, eventId);
         if (!result){
             return false;
         }

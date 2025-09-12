@@ -10,11 +10,11 @@ public class DropEventRepository : IDropEventRepository{
         _dropEventProvider = dropEventProvider;
     }
 
-    public List<DropEvent> GetAllDropEventInfo()
+    public async Task<List<DropEvent>> GetAllDropEventInfoAsync()
     {
         var allDropEvents = new List<DropEvent>();
 
-        var collection = _dropEventProvider.GetAllDropEventInfo();
+        var collection = await _dropEventProvider.GetAllDropEventInfoAsync();
         foreach (var item in collection)
         {
             allDropEvents.Add(DropEventMapper.ToDomain(item));
@@ -24,9 +24,13 @@ public class DropEventRepository : IDropEventRepository{
     }
 
 
-    public bool CreateEvent(DropEvent newEvent){
+    public async Task<bool> CreateEventAsync(DropEvent newEvent){
         var newEntity = DropEventMapper.ToEntity(newEvent); 
-        return _dropEventProvider.CreateEvent(newEntity);
+        return await _dropEventProvider.CreateEventAsync(newEntity);
+    }
+    
+    public async Task<bool> AttendEventAsync(Attendee attendee, string eventId){
+        return await _dropEventProvider.AttendEventAsync(attendee, eventId);
     }
     
 }

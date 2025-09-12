@@ -6,7 +6,7 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "${workspaceFolder}/sportpick-api/bin/Debug/net7.0/sportpick-api.dll",
+        "program": "${workspaceFolder}/sportpick-api/bin/Debug/net8.0/sportpick-api.dll",
         "args": [],
         "cwd": "${workspaceFolder}/sportpick-api",
         "stopAtEntry": false,
