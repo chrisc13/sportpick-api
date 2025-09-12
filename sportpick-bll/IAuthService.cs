@@ -8,8 +8,7 @@ namespace sportpick_bll
 {
     public interface IAuthService
     {
-        AppUser? Login(AppUser user);
-        bool Register(AppUser request);
-
+        Task<AppUser?> LoginAsync(AppUser user);
+        Task<AppUser> RegisterAsync(AppUser request);
     }
 }

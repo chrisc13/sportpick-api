@@ -7,6 +7,6 @@ using sportpick_domain;
 namespace sportpick_dal;
 public interface IAppUserProvider
 {
-    AppUserEntity? GetByUsername(string username);
-    bool CreateAppUser(AppUserEntity newAppUser);
+    Task<AppUserEntity?> GetByUsernameAsync(string username);
+    Task<AppUserEntity?> CreateAppUserAsync(AppUserEntity newAppUser);
 }

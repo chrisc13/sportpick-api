@@ -5,7 +5,7 @@ namespace sportpick_dal;
 
 public interface IDropEventProvider
 {
-    List<DropEventEntity> GetAllDropEventInfo();
-    bool CreateEvent(DropEventEntity newEvent);
-    bool AttendEvent(Attendee attendee ,string eventId);
+    Task<List<DropEventEntity>> GetAllDropEventInfoAsync();
+    Task<bool> CreateEventAsync(DropEventEntity newEvent);
+    Task<bool> AttendEventAsync(Attendee attendee ,string eventId);
 }

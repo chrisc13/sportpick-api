@@ -19,10 +19,10 @@ public class EventController : ControllerBase{
     }
 
     [HttpGet(Name = "GetEvents")]
-    public IActionResult Get(){
+    public async Task<IActionResult> Get(){
         List<DropEvent> events = new List<DropEvent>();
         
-        events = _dropEventService.GetAllDropEvents();
+        events = await _dropEventService.GetAllDropEventsAsync();
         if (events == null || events.Count == 0){
              return BadRequest();
         }
@@ -31,10 +31,10 @@ public class EventController : ControllerBase{
     }
 
     [HttpGet("GetTopThreePopularEvents")]
-    public IActionResult GetTopThreePopularEvents(){
+    public async Task<IActionResult> GetTopThreePopularEvents(){
         List<DropEvent> events = new List<DropEvent>();
         
-        events = _dropEventService.GetTopThreePopular();
+        events = await _dropEventService.GetTopThreePopularAsync();
         if (events == null || events.Count == 0){
              return BadRequest();
         }
@@ -44,19 +44,15 @@ public class EventController : ControllerBase{
 
     [Authorize]
     [HttpPost("CreateEvent")]
-    public IActionResult CreateEvent([FromBody] DropEvent dropEvent)
+    public async Task<IActionResult> CreateEvent([FromBody] DropEvent dropEvent)
     {   
-        Console.WriteLine(JsonSerializer.Serialize(dropEvent, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
         dropEvent.OrganizerId = userId;
 
          var creatorName = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
         dropEvent.OrganizerName = creatorName;
 
-        var result = _dropEventService.CreateEvent(dropEvent); // use dropEvent, not 'event'
+        var result = await _dropEventService.CreateEventAsync(dropEvent); // use dropEvent, not 'event'
         if (!result)
         {
             return BadRequest();
@@ -67,13 +63,13 @@ public class EventController : ControllerBase{
 
     [Authorize]
     [HttpPost("{eventid}/Attendees")]
-    public IActionResult AttendEvent(string eventid)
+    public async Task<IActionResult> AttendEvent(string eventid)
     {   
         var userName = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
         var attendee = new Attendee(){Username = userName, Id = userId};
 
-        var result = _dropEventService.AttendEvent(attendee, eventid);
+        var result = await _dropEventService.AttendEventAsync(attendee, eventid);
         if (!result)
         {
             return BadRequest();

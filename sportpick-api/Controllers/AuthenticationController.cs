@@ -27,9 +27,9 @@ namespace sportpick_api.Controllers
         }
 
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] AppUser request)
+        public async Task<IActionResult> Login([FromBody] AppUser request)
         {
-            var user = _authService.Login(request);
+            var user = await _authService.LoginAsync(request);
             if (user == null){
                 return Unauthorized(new AuthResponse(null, "", "Login failed. Please try again"));
             }
@@ -39,10 +39,10 @@ namespace sportpick_api.Controllers
         }
         
         [HttpPost("Register")]
-         public IActionResult Register([FromBody] AppUser request)
+         public async Task<ActionResult> Register([FromBody] AppUser request)
         {
-            var result = _authService.Register(request);
-            if (!result){
+            var result = await _authService.RegisterAsync(request);
+            if (result == null){
                 return BadRequest();
             }
 

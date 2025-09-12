@@ -21,12 +21,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
  //drop in services
- builder.Services.AddScoped<IDropEventService, DropEventService>();
+ builder.Services.AddTransient<IDropEventService, DropEventService>();
  builder.Services.AddScoped<IDropEventProvider, DropEventProvider>();
  builder.Services.AddScoped<IDropEventRepository, DropEventRepository>();
+ //profile services
+builder.Services.AddTransient<IProfileService, ProfileService>();
+ builder.Services.AddScoped<IProfileProvider, ProfileProvider>();
+ builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 
- builder.Services.AddScoped<IAuthService, AuthService>();
- builder.Services.AddScoped<ITokenService, TokenService>();
+ builder.Services.AddTransient<IAuthService, AuthService>();
+ builder.Services.AddTransient<ITokenService, TokenService>();
 
  builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
  builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();

@@ -13,8 +13,8 @@ namespace sportpick_dal
             _userProvider = userProvider;
         }
 
-        public AppUser? GetByUsername(string username){
-            var userInDb = _userProvider.GetByUsername(username);
+        public async Task<AppUser?> GetByUsernameAsync(string username){
+            var userInDb = await _userProvider.GetByUsernameAsync(username);
             
             if (userInDb != null){
                 return AppUserMapper.ToDomain(userInDb);
@@ -23,12 +23,13 @@ namespace sportpick_dal
             return null;
         }
 
-        public bool CreateAppUser(AppUser newAppUser){
+        public async Task<AppUser?> CreateAppUserAsync(AppUser newAppUser){
             if (newAppUser != null){
                 var entity = AppUserMapper.ToEntity(newAppUser);
-                return _userProvider.CreateAppUser(entity);
+                var result = await _userProvider.CreateAppUserAsync(entity);
+                return AppUserMapper.ToDomain(result);
             }     
-            return false;
+            return null;
         }
     }
 }

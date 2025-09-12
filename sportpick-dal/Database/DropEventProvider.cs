@@ -16,7 +16,7 @@ namespace sportpick_dal
             _dropEvents = databaseProvider.GetCollection<DropEventEntity>("events");
         }
 
-        public List<DropEventEntity> GetAllDropEventInfo()
+        public async Task<List<DropEventEntity>> GetAllDropEventInfoAsync()
         {
             try
                 {
@@ -30,7 +30,7 @@ namespace sportpick_dal
             }
         }
 
-        public bool CreateEvent(DropEventEntity newEvent)
+        public async Task<bool> CreateEventAsync(DropEventEntity newEvent)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace sportpick_dal
             }
         }
 
-        public bool AttendEvent(Attendee attendee, string eventId)
+        public async Task<bool> AttendEventAsync(Attendee attendee, string eventId)
         {
             var filter = Builders<DropEventEntity>.Filter.Eq("_id", new ObjectId(eventId));
 

@@ -8,6 +8,6 @@ namespace sportpick_dal;
 
 public interface IAppUserRepository
 {
-    AppUser? GetByUsername(string username);
-    bool CreateAppUser(AppUser newAppUser);
+    Task<AppUser?> GetByUsernameAsync(string username);
+    Task<AppUser?> CreateAppUserAsync(AppUser newAppUser);
 }

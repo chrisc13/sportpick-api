@@ -12,29 +12,24 @@ namespace sportpick_dal
             _users = databaseProvider.GetCollection<AppUserEntity>("users");
         }
 
-        public AppUserEntity? GetByUsername(string username){
-             var user = _users
-                .Find(u => u.Username == username)
-                .Project(u => new AppUserEntity { 
-                    Id = u.Id,
-                    Username = u.Username, 
-                    Password = u.Password 
-                })
-                .FirstOrDefault();
-
-            return user; // returns null if not found
+        public async Task<AppUserEntity?> GetByUsernameAsync(string username)
+        {
+                 return await _users
+                    .Find(u => u.Username == username)
+                    .FirstOrDefaultAsync();
         }
 
-        public bool CreateAppUser(AppUserEntity newAppUser){
+        public async Task<AppUserEntity?> CreateAppUserAsync(AppUserEntity newAppUser)
+        {
             try
             {
-                _users.InsertOne(newAppUser);
-                return true;
+                await _users.InsertOneAsync(newAppUser);
+                return newAppUser;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Mongo create user error: {ex.Message}");
-                return false;
+                return null;
             }
         }
         
