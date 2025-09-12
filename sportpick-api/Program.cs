@@ -17,8 +17,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//fut services
-
 builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
  //drop in services
  builder.Services.AddTransient<IDropEventService, DropEventService>();
