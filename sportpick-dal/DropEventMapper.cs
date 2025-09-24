@@ -1,4 +1,6 @@
 using sportpick_domain;
+using MongoDB.Driver.GeoJsonObjectModel;
+
 
 namespace sportpick_dal;
     public static class DropEventMapper
@@ -53,6 +55,11 @@ namespace sportpick_dal;
                 OrganizerId = domain.OrganizerId,
                 Latitude = domain.Latitude,
                 Longitude = domain.Longitude,
+                GeoLocation = (domain.Latitude.HasValue && domain.Longitude.HasValue)
+                    ? new GeoJsonPoint<GeoJson2DGeographicCoordinates>(
+                        new GeoJson2DGeographicCoordinates(domain.Longitude.Value, domain.Latitude.Value)
+                    )
+                    : null,
                 ExtraFields = domain.ExtraFields
             };
         }

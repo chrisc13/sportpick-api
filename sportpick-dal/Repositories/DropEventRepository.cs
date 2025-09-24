@@ -32,5 +32,18 @@ public class DropEventRepository : IDropEventRepository{
     public async Task<bool> AttendEventAsync(Attendee attendee, string eventId){
         return await _dropEventProvider.AttendEventAsync(attendee, eventId);
     }
+
+    public async Task<List<DropEvent>> GetNearbyEventsAsync(double maxDistance, (double latitude, double longitude) location){
+        var nearbyEvents = new List<DropEvent>();
+
+        var collection = await _dropEventProvider.GetNearbyEventsAsync(maxDistance, location);
+        foreach (var item in collection)
+        {
+            nearbyEvents.Add(DropEventMapper.ToDomain(item));
+        }
+
+        return nearbyEvents;    
+    }
+
     
 }

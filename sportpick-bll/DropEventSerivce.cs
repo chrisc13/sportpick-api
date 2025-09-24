@@ -52,6 +52,11 @@ public class DropEventService : IDropEventService{
         return true;
     }
 
+    public async Task<List<DropEvent>> GetNearbyEventsAsync(double maxDistance, (double latitude, double longitude) location){
+        List<DropEvent> dropEvents = new List<DropEvent>();
+        dropEvents = await _dropEventRepository.GetNearbyEventsAsync(maxDistance, location);
 
+        return dropEvents;
+    }
 
 }
