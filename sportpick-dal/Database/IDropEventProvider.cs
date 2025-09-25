@@ -7,5 +7,6 @@ public interface IDropEventProvider
 {
     Task<List<DropEventEntity>> GetAllDropEventInfoAsync();
     Task<bool> CreateEventAsync(DropEventEntity newEvent);
-    Task<bool> AttendEventAsync(Attendee attendee ,string eventId);
+    Task<bool> AttendEventAsync(Attendee attendee, string eventId);
+    Task<List<DropEventEntity>> GetNearbyEventsAsync(double maxDistance, (double latitude, double longitude) location);
 }

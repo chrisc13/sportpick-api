@@ -76,6 +76,20 @@ public class EventController : ControllerBase{
         }
 
         return Ok(true);
+    }    
+
+    [HttpGet("nearby", Name = "GetNearbyEvents")]
+    public async Task<IActionResult> GetNearbyEvents(double maxDistanceMiles, double latitude, double longitude)
+    {
+        if (maxDistanceMiles <= 0)
+            return BadRequest("Max distance must be greater than 0.");
+
+        var events = await _dropEventService.GetNearbyEventsAsync(maxDistanceMiles, (latitude, longitude));
+
+        if (events == null || events.Count == 0)
+            return Ok(new List<DropEvent>()); 
+
+        return Ok(events);
     }
 
     

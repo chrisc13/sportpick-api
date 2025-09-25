@@ -1,6 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using sportpick_domain;
+using MongoDB.Driver.GeoJsonObjectModel;
 
 public class DropEventEntity
 {
@@ -21,7 +22,10 @@ public class DropEventEntity
     public string OrganizerName { get; set; } 
     public string OrganizerId { get; set; }  
     public double? Latitude { get; set; }          
-    public double? Longitude { get; set; }         
+    public double? Longitude { get; set; }       
+
+    [BsonElement("geoLocation")]
+    public GeoJsonPoint<GeoJson2DGeographicCoordinates>? GeoLocation { get; set; }  
     
     public Dictionary<string, object>? ExtraFields { get; set; } 
 }
