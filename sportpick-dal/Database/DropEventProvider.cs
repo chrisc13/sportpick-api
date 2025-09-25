@@ -47,7 +47,8 @@ namespace sportpick_dal
 
         public async Task<bool> AttendEventAsync(Attendee attendee, string eventId)
         {
-            var filter = Builders<DropEventEntity>.Filter.Eq("_id", new ObjectId(eventId));
+            var filter = Builders<DropEventEntity>.Filter.Eq("_id", new ObjectId(eventId)) & Builders<DropEventEntity>.Filter.Ne("Attendees.Username", attendee.Username);
+
 
             var update = Builders<DropEventEntity>.Update.Combine(
                 Builders<DropEventEntity>.Update.Inc("CurrentPlayers", 1),
@@ -56,8 +57,8 @@ namespace sportpick_dal
 
             try
             {
-                _dropEvents.UpdateOne(filter, update);
-                return true;
+                var result = await _dropEvents.UpdateOneAsync(filter, update);
+                return result.ModifiedCount > 0; // true if attendee was added
             }
             catch (Exception ex)
             {
