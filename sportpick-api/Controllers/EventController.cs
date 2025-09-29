@@ -22,7 +22,7 @@ public class EventController : ControllerBase{
     public async Task<IActionResult> Get(){
         List<DropEvent> events = new List<DropEvent>();
         
-        events = await _dropEventService.GetAllDropEventsAsync();
+        events = await _dropEventService.GetFifteenDropEventInfoAsync();
         if (events == null || events.Count == 0){
              return BadRequest();
         }
@@ -35,6 +35,18 @@ public class EventController : ControllerBase{
         List<DropEvent> events = new List<DropEvent>();
         
         events = await _dropEventService.GetTopThreePopularAsync();
+        if (events == null || events.Count == 0){
+             return BadRequest();
+        }
+
+        return Ok(events);
+    }
+
+    [HttpGet("GetTopThreeUpcomingEvents")]
+    public async Task<IActionResult> GetTopThreeUpcomingEvents(){
+        List<DropEvent> events = new List<DropEvent>();
+        
+        events = await _dropEventService.GetTopThreeUpcomingAsync();
         if (events == null || events.Count == 0){
              return BadRequest();
         }

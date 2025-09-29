@@ -17,7 +17,7 @@ namespace sportpick_dal
             _dropEvents = databaseProvider.GetCollection<DropEventEntity>("events");
         }
 
-        public async Task<List<DropEventEntity>> GetAllDropEventInfoAsync()
+        public async Task<List<DropEventEntity>> GetFifteenDropEventInfoAsync()
         {
             try
                 {
@@ -29,6 +29,27 @@ namespace sportpick_dal
                 Console.WriteLine($"Error fetching drop events: {ex.Message}");
                 return new List<DropEventEntity>();
             }
+        }
+        public async Task<List<DropEventEntity>> GetTopThreeUpcomingAsync()
+        {
+            try{
+                var now = DateTime.UtcNow;
+                var upcomingEvents = await _dropEvents
+                .Find(e => e.Start >= now)         // only future events
+                .SortBy(e => e.Start)             // earliest first
+                .Limit(3)                         // top 3
+                .ToListAsync();
+
+                return upcomingEvents;
+            }
+            catch (Exception ex)
+            {
+                // log it if needed
+                Console.WriteLine($"Error fetching drop events: {ex.Message}");
+                return new List<DropEventEntity>();
+            }           
+
+        
         }
 
         public async Task<bool> CreateEventAsync(DropEventEntity newEvent)
@@ -78,15 +99,20 @@ namespace sportpick_dal
                 GeoJson.Geographic(location.longitude, location.latitude)
             );
 
-            var filter = Builders<DropEventEntity>.Filter.NearSphere(
+            var geoFilter = Builders<DropEventEntity>.Filter.NearSphere(
                 x => x.GeoLocation,
                 point,
                 maxDistance: maxDistanceMeters
             );
+               var now = DateTime.UtcNow;
+                var futureFilter = Builders<DropEventEntity>.Filter.Gte(x => x.Start, now);
+
+                // Combine filters
+                var combinedFilter = Builders<DropEventEntity>.Filter.And(geoFilter, futureFilter);
 
             try
             {
-                return await _dropEvents.Find(filter).Limit(15).ToListAsync();
+                return await _dropEvents.Find(combinedFilter).Limit(15).ToListAsync();
             }
             catch (Exception ex)
             {
