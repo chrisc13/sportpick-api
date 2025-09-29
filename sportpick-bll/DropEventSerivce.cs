@@ -11,16 +11,28 @@ public class DropEventService : IDropEventService{
         _dropEventRepository = dropEventRepository;
     }
 
-    public async Task<List<DropEvent>> GetAllDropEventsAsync(){
+    public async Task<List<DropEvent>> GetFifteenDropEventInfoAsync(){
         List<DropEvent> dropEvents = new List<DropEvent>();
-        dropEvents = await _dropEventRepository.GetAllDropEventInfoAsync();
+        dropEvents = await _dropEventRepository.GetFifteenDropEventInfoAsync();
 
         return dropEvents;
     }
 
     public async Task<List<DropEvent>> GetTopThreePopularAsync()
     {
-        var dropEvents = await _dropEventRepository.GetAllDropEventInfoAsync();
+        var dropEvents = await _dropEventRepository.GetFifteenDropEventInfoAsync();
+
+        if (dropEvents == null || dropEvents.Count == 0)
+            return new List<DropEvent>();
+
+        // Order descending by CurrentPlayers
+        dropEvents = dropEvents.OrderByDescending(de => de.Start).ToList();
+
+        return dropEvents.Take(3).ToList();
+    }
+    public async Task<List<DropEvent>> GetTopThreeUpcomingAsync()
+    {
+        var dropEvents = await _dropEventRepository.GetTopThreeUpcomingAsync();
 
         if (dropEvents == null || dropEvents.Count == 0)
             return new List<DropEvent>();
