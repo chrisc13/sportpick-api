@@ -27,6 +27,12 @@ builder.Services.AddTransient<IProfileService, ProfileService>();
  builder.Services.AddScoped<IProfileProvider, ProfileProvider>();
  builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 
+//threads services 
+ //profile services
+builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
+ builder.Services.AddScoped<IDropInThreadProvider, DropInThreadProvider>();
+ builder.Services.AddScoped<IDropInThreadRepository, DropInThreadRepository>();
+
  builder.Services.AddTransient<IAuthService, AuthService>();
  builder.Services.AddTransient<ITokenService, TokenService>();
 
