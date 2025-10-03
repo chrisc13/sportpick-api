@@ -13,8 +13,6 @@ public class DropInThreadEntity
         public string CreatorName { get; set; }
         public string CreatorId { get; set; }
         public DateTime CreatedAt { get; set; }
-        public List<Comment>? Comments { get; set; }   
-        public List<Like> Likes { get; set; }       
         
         public Dictionary<string, object>? ExtraFields { get; set; } 
  }

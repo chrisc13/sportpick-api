@@ -1,49 +1,63 @@
 using sportpick_dal;
 using sportpick_domain;
 using System;
+using System.Collections.Generic;
 
 namespace sportpick_bll;
 public class DropInThreadService : IDropInThreadService{
 
     IDropInThreadRepository _dropInThreadRepository;
+    IDropInThreadCommentRepository _dropInThreadCommentRepository;
+    IDropInThreadLikeRepository _dropInThreadLikeRepository;
 
-    public DropInThreadService(IDropInThreadRepository dropInThreadRepository){
+    public DropInThreadService(IDropInThreadRepository dropInThreadRepository, IDropInThreadCommentRepository dropInThreadCommentRepository, 
+        IDropInThreadLikeRepository dropInThreadLikeRepository){
         _dropInThreadRepository = dropInThreadRepository;
+        _dropInThreadCommentRepository = dropInThreadCommentRepository;
+        _dropInThreadLikeRepository = dropInThreadLikeRepository;
     }
 
     public async Task<List<DropInThread>> GetFifteenDropInThreadAsync(){
         List<DropInThread> dropInThreads = new List<DropInThread>();
         dropInThreads = await _dropInThreadRepository.GetFifteenDropInThreadAsync();
-
+        foreach (var thread in dropInThreads)
+        {
+            thread.CommentCount = await _dropInThreadCommentRepository.GetCommentCountByThreadIdAsync(thread.Id);
+            thread.LikeCount = await _dropInThreadLikeRepository.GetLikeCountByThreadIdAsync(thread.Id);
+        }
         return dropInThreads;
     }
 
-/*
-    public async Task<List<DropInThread>> GetTopThreePopularAsync()
+    public async Task<DropInThread?> GetDropInThreadByIdAsync(string id)
     {
-        var dropInThreads = await _dropInThreadRepository.GetFifteenDropInThreadInfoAsync();
+        // Get the main thread entity from the repository
+        var dropInThread = await _dropInThreadRepository.GetDropInThreadByIdAsync(id);
+        if (dropInThread == null) return null;
 
-        if (dropInThreads == null || dropInThreads.Count == 0)
-            return new List<DropInThread>();
+        // Fetch comments and likes
+        var comments = await _dropInThreadCommentRepository.GetCommentsByThreadIdAsync(id);
+        var likes = await _dropInThreadLikeRepository.GetLikesByThreadIdAsync(id);
 
-        // Order descending by CurrentPlayers
-        dropInThreads = dropInThreads.OrderByDescending(de => de.Start).ToList();
+        // Map them into the domain object
+        dropInThread.Comments = comments ?? new List<Comment>();
+        dropInThread.Likes = likes ?? new List<Like>();
+        dropInThread.CommentCount = dropInThread.Comments.Count;
+        dropInThread.LikeCount = dropInThread.Likes.Count;
 
-        return dropInThreads.Take(3).ToList();
+        return dropInThread;
     }
-    public async Task<List<DropInThread>> GetTopThreeUpcomingAsync()
+    public async Task<bool> AddThreadCommentAsync(Comment newComment, string threadId)
     {
-        var dropInThreads = await _dropInThreadRepository.GetTopThreeUpcomingAsync();
-
-        if (dropInThreads == null || dropInThreads.Count == 0)
-            return new List<DropInThread>();
-
-        // Order descending by CurrentPlayers
-        dropInThreads = dropInThreads.OrderByDescending(de => de.Start).ToList();
-
-        return dropInThreads.Take(3).ToList();
+        return await _dropInThreadCommentRepository.AddThreadCommentAsync(newComment, threadId);
     }
-*/
+    public async Task<bool> AddThreadLikeAsync(Like like, string threadId)
+    {
+        return await _dropInThreadLikeRepository.AddLikeAsync(like, threadId);
+    }
+    public async Task<bool> RemoveThreadLikeAsync(string likeid)
+    {
+        return await _dropInThreadLikeRepository.RemoveLikeAsync(likeid);
+    }
 
     public async Task<bool> CreateDropInThreadAsync(DropInThread newDropInThread){
         var result = await _dropInThreadRepository.CreateDropInThreadAsync(newDropInThread);
