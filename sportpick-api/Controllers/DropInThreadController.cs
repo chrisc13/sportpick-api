@@ -30,29 +30,59 @@ public class DropInThreadController : ControllerBase{
         return Ok(dropInThreads);
     }
 
-    // [HttpGet("GetTopThreePopularEvents")]
-    // public async Task<IActionResult> GetTopThreePopularEvents(){
-    //     List<DropEvent> events = new List<DropEvent>();
-        
-    //     events = await _dropEventService.GetTopThreePopularAsync();
-    //     if (events == null || events.Count == 0){
-    //          return BadRequest();
-    //     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetThread(string id)
+    {
+        var thread = await _dropInThreadService.GetDropInThreadByIdAsync(id);
 
-    //     return Ok(events);
-    // }
+        if (thread == null)
+             return BadRequest();
 
-    // [HttpGet("GetTopThreeUpcomingEvents")]
-    // public async Task<IActionResult> GetTopThreeUpcomingEvents(){
-    //     List<DropEvent> events = new List<DropEvent>();
-        
-    //     events = await _dropEventService.GetTopThreeUpcomingAsync();
-    //     if (events == null || events.Count == 0){
-    //          return BadRequest();
-    //     }
+        return Ok(thread);
+    }
 
-    //     return Ok(events);
-    // }
+    [Authorize]
+    [HttpPost("{id}/comments")]
+    public async Task<IActionResult> AddComment(string id, [FromBody] Comment comment)
+    {
+        comment.UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+        comment.Username = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
+        comment.CreatedAt = DateTime.UtcNow;
+
+        var result = await _dropInThreadService.AddThreadCommentAsync(comment, id);
+        if (!result) return BadRequest();
+
+        return Ok(true);
+    }
+
+    // POST: api/DropInThread/{id}/likes
+    [Authorize]
+    [HttpPost("{id}/likes")]
+    public async Task<IActionResult> AddLike(string id)
+    {
+        var like = new Like
+        {
+            UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "",
+            Username = User.FindFirst(ClaimTypes.Name)?.Value ?? "",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        var result = await _dropInThreadService.AddThreadLikeAsync(like, id);
+        if (!result) return BadRequest();
+
+        return Ok(true);
+    }
+
+    // DELETE: api/DropInThread/likes/{likeId}
+    [Authorize]
+    [HttpDelete("likes/{likeId}")]
+    public async Task<IActionResult> RemoveLike(string likeId)
+    {
+        var result = await _dropInThreadService.RemoveThreadLikeAsync(likeId);
+        if (!result) return NotFound();
+
+        return Ok(true);
+    }
 
     [Authorize]
     [HttpPost("CreateDropInThread")]

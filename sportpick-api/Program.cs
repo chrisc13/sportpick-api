@@ -28,10 +28,15 @@ builder.Services.AddTransient<IProfileService, ProfileService>();
  builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 
 //threads services 
- //profile services
 builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
  builder.Services.AddScoped<IDropInThreadProvider, DropInThreadProvider>();
  builder.Services.AddScoped<IDropInThreadRepository, DropInThreadRepository>();
+
+ builder.Services.AddScoped<IDropInThreadCommentProvider, DropInThreadCommentProvider>();
+ builder.Services.AddScoped<IDropInThreadCommentRepository, DropInThreadCommentRepository>();
+
+ builder.Services.AddScoped<IDropInThreadLikeProvider, DropInThreadLikeProvider>();
+ builder.Services.AddScoped<IDropInThreadLikeRepository, DropInThreadLikeRepository>();
 
  builder.Services.AddTransient<IAuthService, AuthService>();
  builder.Services.AddTransient<ITokenService, TokenService>();

@@ -31,6 +31,17 @@ namespace sportpick_dal
             }
         }
 
+        public async Task<DropInThreadEntity?> GetDropInThreadByIdAsync(string id)
+        {
+            if (!ObjectId.TryParse(id, out var objectId))
+                return null; // invalid ObjectId
+
+            return await _dropInThreads
+                .Find(t => t.Id == id) // <-- use the property name, not _id
+                .FirstOrDefaultAsync();
+        }
+
+
         public async Task<bool> CreateDropInThreadAsync(DropInThreadEntity newEvent)
         {
             try
