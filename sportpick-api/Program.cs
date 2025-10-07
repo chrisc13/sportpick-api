@@ -44,7 +44,18 @@ builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
  builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
  builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
  builder.Services.AddHttpClient();
+ var redisHost = builder.Configuration.GetSection("Redis:host").Value;
+ var redisPort = int.Parse(builder.Configuration["Redis:port"]);
+ var redisUser = builder.Configuration.GetSection("Redis:user").Value;
+ var redisPassword = builder.Configuration.GetSection("Redis:password").Value;
 
+// Register your RedisProvider as a singleton
+ builder.Services.AddSingleton(new RedisProvider(redisHost, redisPort, redisUser, redisPassword));
+
+// Register Repository and Service
+ builder.Services.AddScoped<MessagingRepository>();
+ builder.Services.AddScoped<MessagingService>();
+ 
 
 builder.Services.AddCors(options =>
 {
