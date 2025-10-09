@@ -18,50 +18,49 @@ namespace sportpick_bll
             _profileProvider = profileProvider;
         }
 
-        public async Task<AppUser?> LoginAsync(AppUser request)
+        public async Task<AppUser?> LoginAsync(string username, string password)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
-            if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 return null;
 
-            var user = await _userRepository.GetByUsernameAsync(request.Username);
+            var user = await _userRepository.GetByUsernameAsync(username);
 
             // Ensure user exists and stored password is not null/empty
             if (user == null || string.IsNullOrEmpty(user.Password))
                 return null;
 
             // Verify password
-            if (!BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
+            if (!BCrypt.Net.BCrypt.Verify(password, user.Password))
                 return null;
 
             return new AppUser
             {
                 Id = user.Id,
                 Username = user.Username,
+                ProfileImageUrl = user.ProfileImageUrl,
                 Password = null // don't return hashed password
             };
         }
 
 
-        public async Task<AppUser?> RegisterAsync(AppUser request)
+        public async Task<AppUser?> RegisterAsync(string username, string password)
         {
             // Validate input
-            if (request == null) throw new ArgumentNullException(nameof(request));
-            if (string.IsNullOrWhiteSpace(request.Username))
-                throw new ArgumentException("Username cannot be empty", nameof(request.Username));
-            if (string.IsNullOrWhiteSpace(request.Password))
-                throw new ArgumentException("Password cannot be empty", nameof(request.Password));
+            if (string.IsNullOrWhiteSpace(username))
+                throw new ArgumentException("Username cannot be empty");
+            if (string.IsNullOrWhiteSpace(password))
+                throw new ArgumentException("Password cannot be empty");
 
             // Check if user already exists
-            var existingUser = await _userRepository.GetByUsernameAsync(request.Username);
+            var existingUser = await _userRepository.GetByUsernameAsync(username.ToLower());
             if (existingUser != null)
                 return null;
 
             // Hash password
-            request.Password = BCrypt.Net.BCrypt.HashPassword(request.Password);
+            password = BCrypt.Net.BCrypt.HashPassword(password);
 
             // Create new user
-            var newUser = await _userRepository.CreateAppUserAsync(request);
+            var newUser = await _userRepository.CreateAppUserAsync(username, password);
             if (newUser == null)
                 return null;
 
@@ -81,5 +80,8 @@ namespace sportpick_bll
 
             return newUser;
         }
+
+    
+
     }
 }
