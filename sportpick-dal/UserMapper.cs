@@ -13,7 +13,8 @@ namespace sportpick_dal
             {
                 Id = entity.Id,
                 Username = entity.Username,
-                Password = entity.Password
+                Password = entity.Password,
+                ProfileImageUrl = entity.ProfileImageUrl
             };
         }
 
@@ -25,7 +26,8 @@ namespace sportpick_dal
             {
                 Id = user.Id,
                 Username = user.Username,
-                Password = user.Password
+                Password = user.Password,
+                ProfileImageUrl = user.ProfileImageUrl
             };
         }
     }

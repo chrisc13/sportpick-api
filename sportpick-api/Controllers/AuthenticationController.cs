@@ -27,26 +27,28 @@ namespace sportpick_api.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] AppUser request)
+        public async Task<IActionResult> Login([FromQuery] string username, [FromQuery] string password)
         {
-            var user = await _authService.LoginAsync(request);
+            var user = await _authService.LoginAsync(username, password);
             if (user == null){
                 return Unauthorized(new AuthResponse(null, "", "Login failed. Please try again"));
             }
             var token = _tokenService.GenerateToken(user.Username, user.Id ?? "");
-            var userResponse = new UserResponse(user.Username);
+            var userResponse = new UserResponse(user.Username, user.Id, user.ProfileImageUrl);
             return Ok(new AuthResponse(userResponse, token, "Success login"));
         }
         
         [HttpPost("Register")]
-         public async Task<ActionResult> Register([FromBody] AppUser request)
+         public async Task<ActionResult> Register([FromQuery] string username, [FromQuery] string password)
         {
-            var result = await _authService.RegisterAsync(request);
-            if (result == null){
+            var user = await _authService.RegisterAsync(username, password);
+            if (user == null){
                 return BadRequest();
             }
 
-            return Ok(true);
+            var token = _tokenService.GenerateToken(user.Username, user.Id ?? "");
+            var userResponse = new UserResponse(user.Username, user.Id, user.ProfileImageUrl);
+            return Ok(new AuthResponse(userResponse, token, "Success login"));
         }
 
     }
