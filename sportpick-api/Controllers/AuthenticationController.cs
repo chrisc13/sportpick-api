@@ -27,9 +27,9 @@ namespace sportpick_api.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromQuery] string username, [FromQuery] string password)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var user = await _authService.LoginAsync(username, password);
+            var user = await _authService.LoginAsync(request.Username, request.Password);
             if (user == null){
                 return Unauthorized(new AuthResponse(null, "", "Login failed. Please try again"));
             }
@@ -39,16 +39,39 @@ namespace sportpick_api.Controllers
         }
         
         [HttpPost("Register")]
-         public async Task<ActionResult> Register([FromQuery] string username, [FromQuery] string password)
+        public async Task<ActionResult> Register([FromBody] LoginRequest request)
         {
-            var user = await _authService.RegisterAsync(username, password);
-            if (user == null){
-                return BadRequest();
-            }
+            var result = await _authService.RegisterAsync(request.Username, request.Password);
 
-            var token = _tokenService.GenerateToken(user.Username, user.Id ?? "");
-            var userResponse = new UserResponse(user.Username, user.Id, user.ProfileImageUrl);
-            return Ok(new AuthResponse(userResponse, token, "Success login"));
+            // result.AppUser can be null if registration failed
+            if (result.AppUser == null)
+                return BadRequest(result.Message);
+
+            var token = _tokenService.GenerateToken(result.AppUser.Username, result.AppUser.Id ?? "");
+            var userResponse = new UserResponse(result.AppUser.Username, result.AppUser.Id, result.AppUser.ProfileImageUrl);
+
+            return Ok(new AuthResponse(userResponse, token, result.Message));
+        }
+
+        [HttpPost("ProfileImages")]
+        public async Task<IActionResult> GetProfileImages([FromBody] string[] usernames)
+        {
+            if (usernames == null || usernames.Length == 0)
+                return BadRequest("Usernames are required.");
+
+            var images = await _authService.GetProfileImagesForUsernamesAsync(usernames);
+
+            return Ok(images);
+        }
+       [HttpGet("ProfileImages/{username}")]
+        public async Task<IActionResult> GetProfileImage([FromRoute] string username)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+                return BadRequest("Username is required.");
+
+            var image = await _authService.GetProfileImageForUsernameAsync(username);
+
+            return Ok(image);
         }
 
     }

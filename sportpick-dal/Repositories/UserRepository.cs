@@ -9,7 +9,6 @@ namespace sportpick_dal
     public class AppUserRepository : IAppUserRepository
     {
         private readonly IAppUserProvider _userProvider;
-        private readonly string DEFAULT_IMAGE = "/default-avatar.png";
 
         public AppUserRepository(IAppUserProvider userProvider){
             _userProvider = userProvider;
@@ -29,15 +28,16 @@ namespace sportpick_dal
             var entity = new AppUserEntity();
             entity.Username = username;
             entity.Password = password;
-            entity.ProfileImageUrl = DEFAULT_IMAGE;
+            entity.ProfileImageUrl = string.Empty;
             var result = await _userProvider.CreateAppUserAsync(entity);
             return AppUserMapper.ToDomain(result);
         }
         
-        public async Task<IEnumerable<AppUser>> GetUsersByIdsAsync(IEnumerable<string> userIds)
+        public async Task<IEnumerable<AppUser>> GetByUsernamesAsync(IEnumerable<string> usernames)
         {
-            var usersInDb = await _userProvider.GetByIdsAsync(userIds);
-            return usersInDb.Select(AppUserMapper.ToDomain);
+            var usersInDb = await _userProvider.GetByUsernamesAsync(usernames); // List<UserEntity>
+            return usersInDb.Select(AppUserMapper.ToDomain); // materialize as List<AppUser>
         }
+
     }
 }

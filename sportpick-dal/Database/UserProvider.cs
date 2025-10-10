@@ -32,9 +32,9 @@ namespace sportpick_dal
                 return null;
             }
         }
-        public async Task<IEnumerable<AppUserEntity>> GetByIdsAsync(IEnumerable<string> userIds)
+        public async Task<IEnumerable<AppUserEntity>> GetByUsernamesAsync(IEnumerable<string> usernames)
         {
-            var filter = Builders<AppUserEntity>.Filter.In(u => u.Id, userIds);
+            var filter = Builders<AppUserEntity>.Filter.In(u => u.Username, usernames);
             var users = await _users.Find(filter).ToListAsync();
             return users;
         }

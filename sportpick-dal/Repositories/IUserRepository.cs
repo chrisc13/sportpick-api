@@ -10,5 +10,5 @@ public interface IAppUserRepository
 {
     Task<AppUser?> GetByUsernameAsync(string username);
     Task<AppUser?> CreateAppUserAsync(string username, string password);
-    Task<IEnumerable<AppUser>> GetUsersByIdsAsync(IEnumerable<string> userIds);
+    Task<IEnumerable<AppUser>> GetByUsernamesAsync(IEnumerable<string> userIds);
 }

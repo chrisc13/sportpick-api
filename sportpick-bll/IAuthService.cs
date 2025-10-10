@@ -9,6 +9,8 @@ namespace sportpick_bll
     public interface IAuthService
     {
         Task<AppUser?> LoginAsync(string username, string password);
-        Task<AppUser> RegisterAsync(string username, string password);
+        Task<AuthDTO> RegisterAsync(string username, string password);
+        Task<Dictionary<string, string>> GetProfileImagesForUsernamesAsync(IEnumerable<string> usernames);
+        Task<string> GetProfileImageForUsernameAsync(string username);
     }
 }
