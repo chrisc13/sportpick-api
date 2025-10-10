@@ -9,5 +9,5 @@ public interface IAppUserProvider
 {
     Task<AppUserEntity?> GetByUsernameAsync(string username);
     Task<AppUserEntity?> CreateAppUserAsync(AppUserEntity newAppUser);
-    Task<IEnumerable<AppUserEntity>> GetByIdsAsync(IEnumerable<string> userIds);
+    Task<IEnumerable<AppUserEntity>> GetByUsernamesAsync(IEnumerable<string> usernames);
 }

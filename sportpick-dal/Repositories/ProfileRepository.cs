@@ -43,5 +43,6 @@ namespace sportpick_dal
             return await _profileProvider.UpsertProfileAsync(updateEntity);
         }
 
+        
     }
 }
