@@ -21,7 +21,8 @@ namespace sportpick_dal
         {
             try
                 {
-                    return _dropEvents.Find(_ => true).Limit(15).ToList() ?? new List<DropEventEntity>();
+                    var now = DateTime.UtcNow;
+                    return _dropEvents.Find(e => e.Start >= now).Limit(15).ToList() ?? new List<DropEventEntity>();
                 }
             catch (Exception ex)
             {
