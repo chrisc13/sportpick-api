@@ -1,5 +1,8 @@
 using sportpick_domain;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class MessagingService
 {
@@ -24,7 +27,18 @@ public class MessagingService
         return await _repo.AddMessageAsync(streamKey, sender, message);
     }
 
-    // Read messages for a conversation
+    // Subscribe to a conversation's stream using two users
+    public async Task SubscribeToStream(string streamKey, Func<ChatMessage, Task> onMessage)
+    {
+
+        // Wrap the repository subscription
+        await _repo.SubscribeAsync(streamKey, async (msg) =>
+        {
+            await onMessage(msg);
+        });
+    }
+
+    // Read historical messages
     public async Task<IEnumerable<ChatMessage>> GetMessages(string user1, string user2, string lastId = "0-0")
     {
         string streamKey = GetChatKey(user1, user2);
