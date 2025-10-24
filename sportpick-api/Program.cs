@@ -49,8 +49,9 @@ builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
  var redisUser = builder.Configuration.GetSection("Redis:user").Value;
  var redisPassword = builder.Configuration.GetSection("Redis:password").Value;
 
+builder.Services.AddSignalR();
 // Register your RedisProvider as a singleton
- builder.Services.AddSingleton(new RedisProvider(redisHost, redisPort, redisUser, redisPassword));
+builder.Services.AddSingleton(new RedisProvider(redisHost, redisPort, redisUser, redisPassword));
 
 // Register Repository and Service
  builder.Services.AddScoped<MessagingRepository>();
@@ -64,7 +65,9 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("http://localhost:3000","http://192.168.0.155:3000") // Replace with your React app's URL
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials(); 
+
         });
 });
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -73,18 +76,38 @@ var jwtSettings = builder.Configuration.GetSection("Jwt");
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     }).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        options.TokenValidationParameters = new TokenValidationParameters
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["TokenSecret"]))
+    };
+
+    // 👇 This is required for SignalR token negotiation
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
         {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings["Issuer"],
-            ValidAudience = jwtSettings["Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["TokenSecret"]))
-        };
-    });
+            var accessToken = context.Request.Query["access_token"];
+            var path = context.HttpContext.Request.Path;
+
+            // If the request is for the hub, grab token from query string
+            if (!string.IsNullOrEmpty(accessToken) &&
+                path.StartsWithSegments("/chathub"))
+            {
+                context.Token = accessToken;
+            }
+
+            return Task.CompletedTask;
+        }
+    };
+});
+
 
 var app = builder.Build();
 
@@ -100,10 +123,9 @@ if (app.Environment.IsProduction())
     app.UseHttpsRedirection();
 }
 app.UseCors("AllowLocalhost");
-
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.MapHub<ChatHub>("/chatHub");
 
 app.MapControllers();
 
