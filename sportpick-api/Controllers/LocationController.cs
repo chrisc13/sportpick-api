@@ -3,22 +3,21 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
+using sportpick_bll.Location;
 
 
 [ApiController]
 [Route("api/[controller]")]
 public class LocationController : ControllerBase
 {
-    private readonly IHttpClientFactory _httpClientFactory;
-    private readonly string _locationIqKey;
+    private readonly ILocationService _locationService;
 
-    public LocationController(IHttpClientFactory httpClientFactory, IConfiguration config)
+    public LocationController(ILocationService locationService)
     {
-        _httpClientFactory = httpClientFactory;
-        _locationIqKey = config["AccessKeys:LocationAPIKey"];
+        _locationService = locationService;
     }
 
-    // Forward geocoding: address → lat/lng
+    /* Forward geocoding: address → lat/lng
     [HttpGet("geocode")]
     public async Task<IActionResult> Geocode([FromQuery] string address)
     {
@@ -45,7 +44,21 @@ public class LocationController : ControllerBase
             lng = results[0].Lon,
             displayName = results[0].DisplayName
         });
+    }*/
+
+    [HttpPost("geocode2")]
+    public async Task<IActionResult> Geocode2([FromBody] GeocodeObject geocodeRequest)
+    {
+        if (string.IsNullOrWhiteSpace(geocodeRequest.DisplayName) || geocodeRequest.Latitude == 0.0 || geocodeRequest.Longitude == 0.0){
+			return BadRequest(new { error = "Missing search address or user coordinates" });
+		}
+		GeocodeObject? geocodeObject = await _locationService.GetCoordinatesForSearchAsync(geocodeRequest);
+		if (geocodeObject == null){
+			return NotFound();
+		}
+		return Ok(geocodeObject);
     }
+    
 }
 
 

@@ -1,13 +1,13 @@
 using sportpick_dal;
 using sportpick_bll;
+using sportpick_dal.External;
+using sportpick_bll.Location;
 using sportpick_api.DTO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +16,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMemoryCache();
 
 builder.Services.AddSingleton<IDatabaseProvider, DatabaseProvider>();
  //drop in services
@@ -43,7 +45,18 @@ builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
 
  builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
  builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
- builder.Services.AddHttpClient();
+//location services
+builder.Services.AddSingleton<ILocationProvider, LocationProvider>();
+builder.Services.AddSingleton<ILocationService, LocationService>();
+builder.Services.AddSingleton<ILocationRepository, LocationRepository>();
+
+
+builder.Services.AddHttpClient<ILocationProvider, LocationProvider>(client =>
+{
+    client.BaseAddress = new Uri("https://us1.locationiq.com/v1/");
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
+
  var redisHost = builder.Configuration.GetSection("Redis:host").Value;
  var redisPort = int.Parse(builder.Configuration["Redis:port"]);
  var redisUser = builder.Configuration.GetSection("Redis:user").Value;
