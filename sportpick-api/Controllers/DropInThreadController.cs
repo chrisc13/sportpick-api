@@ -83,7 +83,7 @@ public class DropInThreadController : ControllerBase{
 
         return Ok(true);
     }
-
+//revert
     [Authorize]
     [HttpPost("CreateDropInThread")]
     public async Task<IActionResult> CreateEvent([FromBody] DropInThread dropInThread)
