@@ -46,16 +46,17 @@ builder.Services.AddTransient<IDropInThreadService, DropInThreadService>();
  builder.Services.AddScoped<IAppUserProvider, AppUserProvider>();
  builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 //location services
-builder.Services.AddSingleton<ILocationProvider, LocationProvider>();
-builder.Services.AddSingleton<ILocationService, LocationService>();
 builder.Services.AddSingleton<ILocationRepository, LocationRepository>();
 
-
+// Provider is transient (stateless, HttpClient based)
 builder.Services.AddHttpClient<ILocationProvider, LocationProvider>(client =>
 {
     client.BaseAddress = new Uri("https://us1.locationiq.com/v1/");
     client.Timeout = TimeSpan.FromSeconds(20);
 });
+
+// Service layer (singleton)
+builder.Services.AddSingleton<ILocationService, LocationService>();
 
  var redisHost = builder.Configuration.GetSection("Redis:host").Value;
  var redisPort = int.Parse(builder.Configuration["Redis:port"]);
